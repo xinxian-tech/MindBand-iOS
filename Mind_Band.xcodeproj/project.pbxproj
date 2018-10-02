@@ -69,6 +69,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		3A1A08B82163A299005F4251 /* VideoResources */ = {
+			isa = PBXGroup;
+			children = (
+				3A57CE7821639C3600D8B864 /* Spring_1.gif */,
+				3A57CE7A21639C3F00D8B864 /* Spring_2.gif */,
+			);
+			path = VideoResources;
+			sourceTree = "<group>";
+		};
 		3A57CE6821638F4400D8B864 /* Create N Share */ = {
 			isa = PBXGroup;
 			children = (
@@ -94,8 +103,7 @@
 		3A57CE7721639C0F00D8B864 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				3A57CE7821639C3600D8B864 /* Spring_1.gif */,
-				3A57CE7A21639C3F00D8B864 /* Spring_2.gif */,
+				3A1A08B82163A299005F4251 /* VideoResources */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -415,7 +423,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4C47ZVS5JD;
 				INFOPLIST_FILE = Mind_Band/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Frost.Mind-Band";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -431,7 +442,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4C47ZVS5JD;
 				INFOPLIST_FILE = Mind_Band/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Frost.Mind-Band";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;

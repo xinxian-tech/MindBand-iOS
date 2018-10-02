@@ -17,6 +17,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <wkWebView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Suj-dH-ntT">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="deO-xa-KAE">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                                 <subviews>
@@ -162,6 +172,7 @@
                         <outlet property="conditionElementCollectionView" destination="KKG-4W-gc5" id="ksp-hp-iOj"/>
                         <outlet property="titleLabel" destination="boe-xF-k8P" id="bpP-a4-isw"/>
                         <outlet property="topGradientView" destination="deO-xa-KAE" id="zGx-4c-PU3"/>
+                        <outlet property="videoWKWebView" destination="Suj-dH-ntT" id="y8X-Ee-TDG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aTN-hg-q9Y" userLabel="First Responder" sceneMemberID="firstResponder"/>

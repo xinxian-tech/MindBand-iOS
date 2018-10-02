@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ikW-Lw-QdT">
-                                <rect key="frame" x="0.0" y="88" width="375" height="641"/>
+                                <rect key="frame" x="0.0" y="140" width="375" height="589"/>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -119,8 +119,8 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="K6O-Oq-fJb" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Community" image="CommunityBarIcon" id="kOH-AL-3JL"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dyF-2s-ubu">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="dyF-2s-ubu">
+                        <rect key="frame" x="0.0" y="44" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <textAttributes key="titleTextAttributes">

@@ -7,18 +7,21 @@
 //
 
 import UIKit
+import WebKit
 
 class MelodyGenerateViewController: UIViewController {
 
     @IBOutlet weak var conditionElementCollectionView: UICollectionView!
     @IBOutlet weak var topGradientView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var videoWKWebView: WKWebView!
     
     var conditionalElements: [ConditionalElement] = [.image, .vocal, .health, .emoji]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupGradientView()
+        setupWebKitView()
         loadGeneratedVideo()
     }
     
@@ -34,7 +37,18 @@ class MelodyGenerateViewController: UIViewController {
         topGradientView.layer.insertSublayer(gradientLayer, at: 0)
     }
     
+    private func setupWebKitView() {
+        videoWKWebView.isOpaque = false
+        videoWKWebView.scrollView.backgroundColor = .black
+        videoWKWebView.scrollView.isScrollEnabled = false
+        videoWKWebView.scrollView.maximumZoomScale = 1
+        videoWKWebView.scrollView.minimumZoomScale = 1
+    }
+    
     private func loadGeneratedVideo() {
+        let gifURL = Bundle.main.url(forResource: "Spring_1", withExtension: "gif")!
+        let gifData = try! Data(contentsOf: gifURL)
+        videoWKWebView.load(gifData, mimeType: "image/gif", characterEncodingName: "UTF-8", baseURL: gifURL)
     }
     
 }
