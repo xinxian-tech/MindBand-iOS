@@ -7,14 +7,12 @@
 //
 
 import UIKit
-import WebKit
 
 class MelodyGenerateViewController: UIViewController {
 
     @IBOutlet weak var conditionElementCollectionView: UICollectionView!
     @IBOutlet weak var topGradientView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var videoWebView: WKWebView!
     
     var conditionalElements: [ConditionalElement] = [.image, .vocal, .health, .emoji]
     
@@ -30,17 +28,13 @@ class MelodyGenerateViewController: UIViewController {
     
     private func setupGradientView() {
         let gradientLayer = CAGradientLayer()
-        gradientLayer.colors = [UIColor(red: 0, green: 0, blue: 0, alpha: 0.4), UIColor.clear.cgColor]
-        gradientLayer.locations = [0.0, 1.0]
-        gradientLayer.frame = topGradientView.frame
+        gradientLayer.colors = [UIColor.black.cgColor, UIColor.clear.cgColor]
+        gradientLayer.locations = [0.5, 1.0]
+        gradientLayer.frame = topGradientView.bounds
         topGradientView.layer.insertSublayer(gradientLayer, at: 0)
     }
     
     private func loadGeneratedVideo() {
-        let url = Bundle.main.url(forResource: "Spring_1", withExtension: "gif")!
-        let gifData = try! Data(contentsOf: url)
-        videoWebView.load(gifData, mimeType: "image/gif", characterEncodingName: "UTF-8", baseURL: url)
-        videoWebView.contentMode = UIView.ContentMode.scaleAspectFit
     }
     
 }
