@@ -10,6 +10,8 @@
 		3A1A08BC2163B08A005F4251 /* Lotus.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 3A1A08BB2163B06C005F4251 /* Lotus.m4a */; };
 		3A1A08BE2163B125005F4251 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1A08BD2163B125005F4251 /* Extensions.swift */; };
 		3A1A08C02164516E005F4251 /* MindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1A08BF2164516E005F4251 /* MindViewController.swift */; };
+		3A1A08C221645550005F4251 /* ConditionEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1A08C121645550005F4251 /* ConditionEditView.swift */; };
+		3A1A08C421645568005F4251 /* ConditionEditView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A1A08C321645568005F4251 /* ConditionEditView.xib */; };
 		3A57CE5F216302DE00D8B864 /* Create N Share.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A57CE5E216302DE00D8B864 /* Create N Share.storyboard */; };
 		3A57CE612163057300D8B864 /* MelodyGenerateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A57CE602163057300D8B864 /* MelodyGenerateViewController.swift */; };
 		3A57CE632163066D00D8B864 /* MelodyShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A57CE622163066D00D8B864 /* MelodyShareViewController.swift */; };
@@ -32,6 +34,8 @@
 		3A1A08BB2163B06C005F4251 /* Lotus.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Lotus.m4a; sourceTree = "<group>"; };
 		3A1A08BD2163B125005F4251 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		3A1A08BF2164516E005F4251 /* MindViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MindViewController.swift; sourceTree = "<group>"; };
+		3A1A08C121645550005F4251 /* ConditionEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionEditView.swift; sourceTree = "<group>"; };
+		3A1A08C321645568005F4251 /* ConditionEditView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConditionEditView.xib; sourceTree = "<group>"; };
 		3A57CE5E216302DE00D8B864 /* Create N Share.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Create N Share.storyboard"; sourceTree = "<group>"; };
 		3A57CE602163057300D8B864 /* MelodyGenerateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelodyGenerateViewController.swift; sourceTree = "<group>"; };
 		3A57CE622163066D00D8B864 /* MelodyShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelodyShareViewController.swift; sourceTree = "<group>"; };
@@ -152,6 +156,8 @@
 				3AFE6A07216264F300859AD3 /* Assets.xcassets */,
 				3AFE6A04216264F200859AD3 /* Main.storyboard */,
 				3A1A08BF2164516E005F4251 /* MindViewController.swift */,
+				3A1A08C321645568005F4251 /* ConditionEditView.xib */,
+				3A1A08C121645550005F4251 /* ConditionEditView.swift */,
 				3A57CE6821638F4400D8B864 /* Create N Share */,
 				3A57CE6D216397DE00D8B864 /* Foundation */,
 				3A57CE7721639C0F00D8B864 /* Resources */,
@@ -231,6 +237,7 @@
 				3A57CE5F216302DE00D8B864 /* Create N Share.storyboard in Resources */,
 				3AFE6A08216264F300859AD3 /* Assets.xcassets in Resources */,
 				3A57CE722163991F00D8B864 /* Default-568h@2x.png in Resources */,
+				3A1A08C421645568005F4251 /* ConditionEditView.xib in Resources */,
 				3A57CE7B21639C3F00D8B864 /* Spring_2.gif in Resources */,
 				3A57CE7921639C3600D8B864 /* Spring_1.gif in Resources */,
 				3AFE6A06216264F200859AD3 /* Main.storyboard in Resources */,
@@ -266,6 +273,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A57CE702163987200D8B864 /* MBDataModel.xcdatamodeld in Sources */,
+				3A1A08C221645550005F4251 /* ConditionEditView.swift in Sources */,
 				3A57CE612163057300D8B864 /* MelodyGenerateViewController.swift in Sources */,
 				3A57CE632163066D00D8B864 /* MelodyShareViewController.swift in Sources */,
 				3AFE6A01216264F200859AD3 /* AppDelegate.swift in Sources */,

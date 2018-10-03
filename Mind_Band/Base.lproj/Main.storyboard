@@ -55,11 +55,14 @@
         <!--Mind-->
         <scene sceneID="LFt-ic-Qty">
             <objects>
-                <viewController id="fFY-Bk-VCI" sceneMemberID="viewController">
+                <viewController id="fFY-Bk-VCI" customClass="MindViewController" customModule="Mind_Band" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="914-t5-oj5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Nebula" translatesAutoresizingMaskIntoConstraints="NO" id="hOW-RT-dUi">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AiO-pq-0l5">
                                 <rect key="frame" x="130.66666666666666" y="445.33333333333331" width="114" height="113.99999999999994"/>
                                 <constraints>
@@ -68,45 +71,60 @@
                                 </constraints>
                                 <state key="normal" image="AddButton"/>
                                 <connections>
-                                    <segue destination="psg-S9-Sof" kind="presentation" id="10a-Jc-HBc"/>
+                                    <segue destination="psg-S9-Sof" kind="presentation" identifier="showGenerateViewController" id="10a-Jc-HBc"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Zm-6N-WKL">
                                 <rect key="frame" x="35" y="309" width="107" height="133"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="Picture"/>
+                                <connections>
+                                    <action selector="pictureButtonTapped:" destination="fFY-Bk-VCI" eventType="touchUpInside" id="f24-w3-gAa"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="umo-P5-oHF">
                                 <rect key="frame" x="220" y="309" width="105" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="Weather"/>
+                                <connections>
+                                    <action selector="weatherButtonTapped:" destination="fFY-Bk-VCI" eventType="touchUpInside" id="22v-fJ-kYw"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xFD-Fl-DZd">
                                 <rect key="frame" x="95" y="206" width="102" height="129"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="Location"/>
+                                <connections>
+                                    <action selector="locationButtonTapped:" destination="fFY-Bk-VCI" eventType="touchUpInside" id="YaC-IT-J72"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fkX-p6-apz">
                                 <rect key="frame" x="257" y="105" width="84" height="119"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="Humming"/>
+                                <connections>
+                                    <action selector="hummingButtonTapped:" destination="fFY-Bk-VCI" eventType="touchUpInside" id="Any-Ua-qb6"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="trW-Gv-muz">
                                 <rect key="frame" x="35" y="81" width="122" height="98"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="Workout"/>
+                                <connections>
+                                    <action selector="workoutButtonTapped:" destination="fFY-Bk-VCI" eventType="touchUpInside" id="Qx7-0Q-kD6"/>
+                                </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="wMk-Qe-fIL">
-                                <rect key="frame" x="16" y="602" width="343" height="61"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="16" y="588" width="343" height="75"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="61" id="eaA-ni-qgT"/>
+                                    <constraint firstAttribute="height" constant="75" id="eaA-ni-qgT"/>
                                 </constraints>
                                 <string key="text">Catch your MIND with any input.
 Produce your own music video.
 Make your every day MEMO.</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
@@ -115,8 +133,12 @@ Make your every day MEMO.</string>
                             <constraint firstItem="dln-cC-CtS" firstAttribute="trailing" secondItem="wMk-Qe-fIL" secondAttribute="trailing" constant="16" id="50d-sT-AaB"/>
                             <constraint firstItem="AiO-pq-0l5" firstAttribute="centerX" secondItem="dln-cC-CtS" secondAttribute="centerX" id="6Vs-kn-aee"/>
                             <constraint firstItem="AiO-pq-0l5" firstAttribute="centerY" secondItem="dln-cC-CtS" secondAttribute="centerY" multiplier="1.3" id="B01-kg-yoc"/>
+                            <constraint firstItem="hOW-RT-dUi" firstAttribute="trailing" secondItem="dln-cC-CtS" secondAttribute="trailing" id="EME-8m-pyG"/>
                             <constraint firstItem="dln-cC-CtS" firstAttribute="bottom" secondItem="wMk-Qe-fIL" secondAttribute="bottom" constant="66" id="NcR-DK-s3u"/>
+                            <constraint firstItem="hOW-RT-dUi" firstAttribute="bottom" secondItem="dln-cC-CtS" secondAttribute="bottom" id="OpP-mi-XbS"/>
+                            <constraint firstItem="hOW-RT-dUi" firstAttribute="top" secondItem="914-t5-oj5" secondAttribute="top" id="bHT-9g-nZE"/>
                             <constraint firstItem="wMk-Qe-fIL" firstAttribute="leading" secondItem="dln-cC-CtS" secondAttribute="leading" constant="16" id="eoZ-oG-0z3"/>
+                            <constraint firstItem="hOW-RT-dUi" firstAttribute="leading" secondItem="dln-cC-CtS" secondAttribute="leading" id="gqh-BC-zyv"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dln-cC-CtS"/>
                     </view>
@@ -188,6 +210,7 @@ Make your every day MEMO.</string>
         <image name="Humming" width="312" height="414"/>
         <image name="Location" width="312" height="384"/>
         <image name="MindBarIcon" width="72" height="81"/>
+        <image name="Nebula" width="1125" height="2436"/>
         <image name="Picture" width="327" height="453"/>
         <image name="Weather" width="333" height="441"/>
         <image name="Workout" width="375" height="327"/>

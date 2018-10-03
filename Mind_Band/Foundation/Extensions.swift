@@ -22,7 +22,7 @@ func durationForGifData(data: Data) -> Double {
     return duration
 }
 
-func delayForImageAtIndex(index: Int, source: CGImageSource!) -> Double {
+fileprivate func delayForImageAtIndex(index: Int, source: CGImageSource!) -> Double {
     var delay = 0.0
     let cfProperties = CGImageSourceCopyPropertiesAtIndex(source, index, nil)
     let gifProperties: CFDictionary = unsafeBitCast(CFDictionaryGetValue(cfProperties, Unmanaged.passUnretained(kCGImagePropertyGIFDictionary).toOpaque()), to: CFDictionary.self)
@@ -34,7 +34,7 @@ func delayForImageAtIndex(index: Int, source: CGImageSource!) -> Double {
     return delay
 }
 
-fileprivate let minimumHitArea = CGSize(width: 44, height: 44)
+fileprivate let minimumHitArea = CGSize(width: 50, height: 50)
 
 extension UIButton {
     open override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
