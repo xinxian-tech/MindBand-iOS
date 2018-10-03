@@ -56,6 +56,8 @@ class ConditionEditView: UIView {
         }
     }
     
+    var conditionalElement: ConditionalElement = .image
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.layer.cornerRadius = 10

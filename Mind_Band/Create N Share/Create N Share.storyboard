@@ -81,10 +81,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a9p-yu-a0r">
-                                <rect key="frame" x="335" y="54" width="24" height="24"/>
+                                <rect key="frame" x="325" y="54" width="34" height="34"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="24" id="2gY-df-cCH"/>
-                                    <constraint firstAttribute="height" constant="24" id="DM2-sh-Jee"/>
+                                    <constraint firstAttribute="width" constant="34" id="2gY-df-cCH"/>
+                                    <constraint firstAttribute="height" constant="34" id="DM2-sh-Jee"/>
                                 </constraints>
                                 <state key="normal" image="ShareButton"/>
                                 <connections>
@@ -337,6 +337,6 @@
         <image name="CloseButton" width="63" height="63"/>
         <image name="PublishButton" width="138" height="138"/>
         <image name="SaveButton" width="138" height="138"/>
-        <image name="ShareButton" width="69" height="72"/>
+        <image name="ShareButton" width="140" height="140"/>
     </resources>
 </document>

@@ -30,26 +30,31 @@ class MindViewController: UIViewController {
 
     @IBAction func pictureButtonTapped(_ sender: UIButton) {
         prepareFloatingWindow()
+        floatingWindowView?.conditionalElement = .image
         animateFloatingWindowIn()
     }
     
     @IBAction func weatherButtonTapped(_ sender: UIButton) {
         prepareFloatingWindow()
+        floatingWindowView?.conditionalElement = .weather
         animateFloatingWindowIn()
     }
     
     @IBAction func locationButtonTapped(_ sender: UIButton) {
         prepareFloatingWindow()
+        
         animateFloatingWindowIn()
     }
     
     @IBAction func hummingButtonTapped(_ sender: UIButton) {
         prepareFloatingWindow()
+        floatingWindowView?.conditionalElement = .vocal
         animateFloatingWindowIn()
     }
     
     @IBAction func workoutButtonTapped(_ sender: UIButton) {
         prepareFloatingWindow()
+        floatingWindowView?.conditionalElement = .health
         animateFloatingWindowIn()
     }
     

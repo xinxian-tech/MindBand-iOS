@@ -114,11 +114,11 @@
                                     <action selector="workoutButtonTapped:" destination="fFY-Bk-VCI" eventType="touchUpInside" id="Qx7-0Q-kD6"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="wMk-Qe-fIL">
-                                <rect key="frame" x="16" y="588" width="343" height="75"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wMk-Qe-fIL">
+                                <rect key="frame" x="16" y="588" width="343" height="87"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="75" id="eaA-ni-qgT"/>
+                                    <constraint firstAttribute="height" constant="87" id="eaA-ni-qgT"/>
                                 </constraints>
                                 <string key="text">Catch your MIND with any input.
 Produce your own music video.
@@ -134,7 +134,7 @@ Make your every day MEMO.</string>
                             <constraint firstItem="AiO-pq-0l5" firstAttribute="centerX" secondItem="dln-cC-CtS" secondAttribute="centerX" id="6Vs-kn-aee"/>
                             <constraint firstItem="AiO-pq-0l5" firstAttribute="centerY" secondItem="dln-cC-CtS" secondAttribute="centerY" multiplier="1.3" id="B01-kg-yoc"/>
                             <constraint firstItem="hOW-RT-dUi" firstAttribute="trailing" secondItem="dln-cC-CtS" secondAttribute="trailing" id="EME-8m-pyG"/>
-                            <constraint firstItem="dln-cC-CtS" firstAttribute="bottom" secondItem="wMk-Qe-fIL" secondAttribute="bottom" constant="66" id="NcR-DK-s3u"/>
+                            <constraint firstItem="dln-cC-CtS" firstAttribute="bottom" secondItem="wMk-Qe-fIL" secondAttribute="bottom" constant="54" id="NcR-DK-s3u"/>
                             <constraint firstItem="hOW-RT-dUi" firstAttribute="bottom" secondItem="dln-cC-CtS" secondAttribute="bottom" id="OpP-mi-XbS"/>
                             <constraint firstItem="hOW-RT-dUi" firstAttribute="top" secondItem="914-t5-oj5" secondAttribute="top" id="bHT-9g-nZE"/>
                             <constraint firstItem="wMk-Qe-fIL" firstAttribute="leading" secondItem="dln-cC-CtS" secondAttribute="leading" constant="16" id="eoZ-oG-0z3"/>
