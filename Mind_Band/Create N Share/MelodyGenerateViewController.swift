@@ -8,6 +8,7 @@
 
 import UIKit
 import WebKit
+import AVFoundation
 
 class MelodyGenerateViewController: UIViewController {
 
@@ -18,11 +19,14 @@ class MelodyGenerateViewController: UIViewController {
     
     var conditionalElements: [ConditionalElement] = [.image, .vocal, .health, .emoji]
     
+    var audioPlayer: AVPlayer?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupGradientView()
         setupWebKitView()
         loadGeneratedVideo()
+        loadMelodyAudio()
     }
     
     @IBAction func dismissButtonTapped(_ sender: UIButton) {
@@ -45,10 +49,16 @@ class MelodyGenerateViewController: UIViewController {
         videoWKWebView.scrollView.minimumZoomScale = 1
     }
     
+    private func loadMelodyAudio() {
+        audioPlayer = AVPlayer(url: Bundle.main.url(forResource: "Lotus", withExtension: ".m4a")!)
+        audioPlayer?.play()
+    }
+    
     private func loadGeneratedVideo() {
         let gifURL = Bundle.main.url(forResource: "Spring_1", withExtension: "gif")!
         let gifData = try! Data(contentsOf: gifURL)
         videoWKWebView.load(gifData, mimeType: "image/gif", characterEncodingName: "UTF-8", baseURL: gifURL)
+        delay(for: durationForGifData(data: gifData), block: {self.loadGeneratedVideo()})
     }
     
 }

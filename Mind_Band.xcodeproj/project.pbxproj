@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A1A08BC2163B08A005F4251 /* Lotus.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 3A1A08BB2163B06C005F4251 /* Lotus.m4a */; };
+		3A1A08BE2163B125005F4251 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1A08BD2163B125005F4251 /* Extensions.swift */; };
+		3A1A08C02164516E005F4251 /* MindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1A08BF2164516E005F4251 /* MindViewController.swift */; };
 		3A57CE5F216302DE00D8B864 /* Create N Share.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A57CE5E216302DE00D8B864 /* Create N Share.storyboard */; };
 		3A57CE612163057300D8B864 /* MelodyGenerateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A57CE602163057300D8B864 /* MelodyGenerateViewController.swift */; };
 		3A57CE632163066D00D8B864 /* MelodyShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A57CE622163066D00D8B864 /* MelodyShareViewController.swift */; };
@@ -26,6 +29,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3A1A08BB2163B06C005F4251 /* Lotus.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Lotus.m4a; sourceTree = "<group>"; };
+		3A1A08BD2163B125005F4251 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		3A1A08BF2164516E005F4251 /* MindViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MindViewController.swift; sourceTree = "<group>"; };
 		3A57CE5E216302DE00D8B864 /* Create N Share.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Create N Share.storyboard"; sourceTree = "<group>"; };
 		3A57CE602163057300D8B864 /* MelodyGenerateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelodyGenerateViewController.swift; sourceTree = "<group>"; };
 		3A57CE622163066D00D8B864 /* MelodyShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelodyShareViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +84,14 @@
 			path = VideoResources;
 			sourceTree = "<group>";
 		};
+		3A1A08BA2163AEBC005F4251 /* AudioResources */ = {
+			isa = PBXGroup;
+			children = (
+				3A1A08BB2163B06C005F4251 /* Lotus.m4a */,
+			);
+			path = AudioResources;
+			sourceTree = "<group>";
+		};
 		3A57CE6821638F4400D8B864 /* Create N Share */ = {
 			isa = PBXGroup;
 			children = (
@@ -93,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				3A57CE662163181F00D8B864 /* BasicStructures.swift */,
+				3A1A08BD2163B125005F4251 /* Extensions.swift */,
 				3A57CE6E2163987200D8B864 /* MBDataModel.xcdatamodeld */,
 				3A57CE732163993300D8B864 /* GeneratedMelody+CoreDataClass.swift */,
 				3A57CE742163993300D8B864 /* GeneratedMelody+CoreDataProperties.swift */,
@@ -103,6 +118,7 @@
 		3A57CE7721639C0F00D8B864 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3A1A08BA2163AEBC005F4251 /* AudioResources */,
 				3A1A08B82163A299005F4251 /* VideoResources */,
 			);
 			path = Resources;
@@ -135,6 +151,7 @@
 				3AFE6A09216264F300859AD3 /* LaunchScreen.storyboard */,
 				3AFE6A07216264F300859AD3 /* Assets.xcassets */,
 				3AFE6A04216264F200859AD3 /* Main.storyboard */,
+				3A1A08BF2164516E005F4251 /* MindViewController.swift */,
 				3A57CE6821638F4400D8B864 /* Create N Share */,
 				3A57CE6D216397DE00D8B864 /* Foundation */,
 				3A57CE7721639C0F00D8B864 /* Resources */,
@@ -209,6 +226,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A1A08BC2163B08A005F4251 /* Lotus.m4a in Resources */,
 				3AFE6A0B216264F300859AD3 /* LaunchScreen.storyboard in Resources */,
 				3A57CE5F216302DE00D8B864 /* Create N Share.storyboard in Resources */,
 				3AFE6A08216264F300859AD3 /* Assets.xcassets in Resources */,
@@ -251,9 +269,11 @@
 				3A57CE612163057300D8B864 /* MelodyGenerateViewController.swift in Sources */,
 				3A57CE632163066D00D8B864 /* MelodyShareViewController.swift in Sources */,
 				3AFE6A01216264F200859AD3 /* AppDelegate.swift in Sources */,
+				3A1A08C02164516E005F4251 /* MindViewController.swift in Sources */,
 				3A57CE752163993300D8B864 /* GeneratedMelody+CoreDataClass.swift in Sources */,
 				3A57CE672163181F00D8B864 /* BasicStructures.swift in Sources */,
 				3A57CE6521630E0100D8B864 /* ConditionElementCollectionViewCell.swift in Sources */,
+				3A1A08BE2163B125005F4251 /* Extensions.swift in Sources */,
 				3A57CE762163993300D8B864 /* GeneratedMelody+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -404,7 +424,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4C47ZVS5JD;
 				INFOPLIST_FILE = Mind_Band/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Frost.Mind-Band";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -420,7 +443,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4C47ZVS5JD;
 				INFOPLIST_FILE = Mind_Band/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Frost.Mind-Band";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
