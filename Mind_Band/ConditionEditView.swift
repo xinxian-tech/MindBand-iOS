@@ -14,12 +14,19 @@ protocol ConditionEditDelegate: class {
     func cancelButtonDidTapped()
 }
 
+enum ControlState {
+    case lazy
+    case active
+    case done
+}
+
 class ConditionEditView: UIView {
     
     @IBOutlet weak var blurView: UIVisualEffectView!
     @IBOutlet weak var keyImageView: UIImageView! {
         didSet {
             keyImageView.image = UIImage(named: keyImageName ?? "No Image")
+            keyImageView.clipsToBounds = true
         }
     }
     @IBOutlet weak var titleLabel: UILabel!
@@ -55,6 +62,7 @@ class ConditionEditView: UIView {
             keyImageView.image = UIImage(named: keyImageName ?? "No Image")
         }
     }
+    var controlState: ControlState = .lazy
     
     var conditionalElement: ConditionalElement = .image
     
