@@ -4,9 +4,11 @@
         <attribute name="conditionalComponents" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="defaultSongName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="defaultVideoName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="melodyDescription" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="melodyTitle" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="titleImageName" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="GeneratedMelody" positionX="-63" positionY="-18" width="128" height="105"/>
+        <element name="GeneratedMelody" positionX="-63" positionY="-18" width="128" height="135"/>
     </elements>
 </model>

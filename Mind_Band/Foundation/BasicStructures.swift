@@ -15,6 +15,7 @@ enum ConditionalElement: Int {
     case weather = 3
     case vocal = 4
     case health = 5
+    case location = 6
     
     func getCardImage() -> UIImage {
         switch self {
@@ -30,6 +31,8 @@ enum ConditionalElement: Int {
             return UIImage(named: "VocalCard")!
         case .health:
             return UIImage(named: "HealthCard")!
+        case .location:
+            return UIImage(named: "LocationCard")!
         }
     }
 }

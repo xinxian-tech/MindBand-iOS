@@ -1,9 +1,8 @@
 //
 //  GeneratedMelody+CoreDataProperties.swift
-//  Mind_Band
+//  
 //
-//  Created by 李灿晨 on 2018/10/2.
-//  Copyright © 2018 李灿晨. All rights reserved.
+//  Created by 李灿晨 on 2018/10/5.
 //
 //
 
@@ -17,9 +16,11 @@ extension GeneratedMelody {
         return NSFetchRequest<GeneratedMelody>(entityName: "GeneratedMelody")
     }
 
-    @NSManaged public var melodyTitle: String?
-    @NSManaged public var defaultSongName: String?
     @NSManaged public var conditionalComponents: String?
+    @NSManaged public var defaultSongName: String?
     @NSManaged public var defaultVideoName: String?
+    @NSManaged public var melodyDescription: String?
+    @NSManaged public var melodyTitle: String?
+    @NSManaged public var titleImageName: String?
 
 }
