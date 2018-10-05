@@ -86,6 +86,14 @@
                                     <action selector="closeButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="J0p-pA-dZj"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RcW-tH-xn8" customClass="RecordTimerView" customModule="Mind_Band" customModuleProvider="target">
+                                <rect key="frame" x="102" y="285" width="121" height="37"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37" id="QXm-al-xrk"/>
+                                    <constraint firstAttribute="width" constant="121" id="aIV-fO-ePC"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <constraints>
                             <constraint firstItem="tE3-jc-N2L" firstAttribute="top" secondItem="y6h-SH-bJH" secondAttribute="bottom" constant="16" id="3dV-EI-3QW"/>
@@ -102,6 +110,8 @@
                             <constraint firstAttribute="trailing" secondItem="k3q-6V-i0e" secondAttribute="trailing" constant="16" id="dr5-AW-qzb"/>
                             <constraint firstAttribute="trailing" secondItem="y6h-SH-bJH" secondAttribute="trailing" id="grT-8e-M9g"/>
                             <constraint firstItem="k3q-6V-i0e" firstAttribute="leading" secondItem="qPG-kM-Chl" secondAttribute="leading" constant="16" id="oBn-SW-Nic"/>
+                            <constraint firstItem="RcW-tH-xn8" firstAttribute="centerX" secondItem="y6h-SH-bJH" secondAttribute="centerX" constant="-2" id="qB0-Kp-cFr"/>
+                            <constraint firstItem="tE3-jc-N2L" firstAttribute="top" secondItem="RcW-tH-xn8" secondAttribute="bottom" constant="43" id="t8t-fm-FPR"/>
                             <constraint firstItem="y6h-SH-bJH" firstAttribute="leading" secondItem="qPG-kM-Chl" secondAttribute="leading" id="w11-et-vsd"/>
                         </constraints>
                     </view>
@@ -123,6 +133,7 @@
                 <outlet property="confirmButton" destination="cTZ-R7-wo9" id="ydp-t8-IW9"/>
                 <outlet property="descriptionLabel" destination="k3q-6V-i0e" id="wRI-OI-3GV"/>
                 <outlet property="keyImageView" destination="y6h-SH-bJH" id="7fB-V6-cbs"/>
+                <outlet property="timerView" destination="RcW-tH-xn8" id="0qh-JW-rSK"/>
                 <outlet property="titleLabel" destination="tE3-jc-N2L" id="DTS-WC-GdP"/>
             </connections>
             <point key="canvasLocation" x="138.40000000000001" y="117.39130434782609"/>

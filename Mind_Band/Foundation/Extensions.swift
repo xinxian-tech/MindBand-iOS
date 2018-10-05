@@ -46,3 +46,14 @@ extension UIButton {
         return (largerFrame.contains(point)) ? self : nil
     }
 }
+
+
+extension Int {
+    func digitExtended(to digits: Int) -> String {
+        var stringRepresentation = String(self)
+        while stringRepresentation.count < digits {
+            stringRepresentation = "0" + stringRepresentation
+        }
+        return stringRepresentation
+    }
+}

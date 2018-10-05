@@ -23,6 +23,8 @@
 		3A57CE762163993300D8B864 /* GeneratedMelody+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A57CE742163993300D8B864 /* GeneratedMelody+CoreDataProperties.swift */; };
 		3A57CE7921639C3600D8B864 /* Spring_1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3A57CE7821639C3600D8B864 /* Spring_1.gif */; };
 		3A57CE7B21639C3F00D8B864 /* Spring_2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3A57CE7A21639C3F00D8B864 /* Spring_2.gif */; };
+		3ACD525121650CE1004271C9 /* RecordTimer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3ACD525021650CE1004271C9 /* RecordTimer.xib */; };
+		3ACD525321650CF4004271C9 /* RecordTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACD525221650CF4004271C9 /* RecordTimerView.swift */; };
 		3AFE6A01216264F200859AD3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFE6A00216264F200859AD3 /* AppDelegate.swift */; };
 		3AFE6A06216264F200859AD3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AFE6A04216264F200859AD3 /* Main.storyboard */; };
 		3AFE6A08216264F300859AD3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AFE6A07216264F300859AD3 /* Assets.xcassets */; };
@@ -47,6 +49,8 @@
 		3A57CE742163993300D8B864 /* GeneratedMelody+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GeneratedMelody+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		3A57CE7821639C3600D8B864 /* Spring_1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Spring_1.gif; sourceTree = "<group>"; };
 		3A57CE7A21639C3F00D8B864 /* Spring_2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Spring_2.gif; sourceTree = "<group>"; };
+		3ACD525021650CE1004271C9 /* RecordTimer.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecordTimer.xib; sourceTree = "<group>"; };
+		3ACD525221650CF4004271C9 /* RecordTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordTimerView.swift; sourceTree = "<group>"; };
 		3AFE69FD216264F100859AD3 /* Mind_Band.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mind_Band.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AFE6A00216264F200859AD3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3AFE6A05216264F200859AD3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -158,6 +162,8 @@
 				3A1A08BF2164516E005F4251 /* MindViewController.swift */,
 				3A1A08C321645568005F4251 /* ConditionEditView.xib */,
 				3A1A08C121645550005F4251 /* ConditionEditView.swift */,
+				3ACD525021650CE1004271C9 /* RecordTimer.xib */,
+				3ACD525221650CF4004271C9 /* RecordTimerView.swift */,
 				3A57CE6821638F4400D8B864 /* Create N Share */,
 				3A57CE6D216397DE00D8B864 /* Foundation */,
 				3A57CE7721639C0F00D8B864 /* Resources */,
@@ -232,6 +238,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3ACD525121650CE1004271C9 /* RecordTimer.xib in Resources */,
 				3A1A08BC2163B08A005F4251 /* Lotus.m4a in Resources */,
 				3AFE6A0B216264F300859AD3 /* LaunchScreen.storyboard in Resources */,
 				3A57CE5F216302DE00D8B864 /* Create N Share.storyboard in Resources */,
@@ -275,6 +282,7 @@
 				3A57CE702163987200D8B864 /* MBDataModel.xcdatamodeld in Sources */,
 				3A1A08C221645550005F4251 /* ConditionEditView.swift in Sources */,
 				3A57CE612163057300D8B864 /* MelodyGenerateViewController.swift in Sources */,
+				3ACD525321650CF4004271C9 /* RecordTimerView.swift in Sources */,
 				3A57CE632163066D00D8B864 /* MelodyShareViewController.swift in Sources */,
 				3AFE6A01216264F200859AD3 /* AppDelegate.swift in Sources */,
 				3A1A08C02164516E005F4251 /* MindViewController.swift in Sources */,

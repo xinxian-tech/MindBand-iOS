@@ -42,7 +42,6 @@ class MindViewController: UIViewController {
     @IBAction func weatherButtonTapped(_ sender: UIButton) {
         prepareFloatingWindow()
         floatingWindowView?.conditionalElement = .weather
-        
         animateFloatingWindowIn()
     }
     
@@ -58,7 +57,10 @@ class MindViewController: UIViewController {
         prepareFloatingWindow()
         floatingWindowView?.conditionalElement = .vocal
         floatingWindowView?.confirmButtonText = "Start"
-        floatingWindowView?.cancelButtonText = "Quit"
+        floatingWindowView?.confirmButton.backgroundColor = UIColor(red: 249/255, green:
+            58/255, blue: 96/255, alpha: 0.6)
+        floatingWindowView?.cancelButtonText = "Cancel"
+        floatingWindowView?.keyImageName = "HummingCondition"
         animateFloatingWindowIn()
     }
     
@@ -109,6 +111,19 @@ extension MindViewController: ConditionEditDelegate {
             imagePickerController.sourceType = .camera
             imagePickerController.delegate = self
             present(imagePickerController, animated: true, completion: nil)
+        case .vocal:
+            switch floatingWindowView!.controlState {
+            case .ready:
+                floatingWindowView?.activateTimer()
+                floatingWindowView?.confirmButton.setTitle("Stop", for: .normal)
+                floatingWindowView?.controlState = .active
+            case .active:
+                floatingWindowView?.stopTimer()
+                floatingWindowView?.confirmButton.setTitle("Save", for: .normal)
+                floatingWindowView?.controlState = .done
+            case .done:
+                closeButtonDidTapped()
+            }
         default:
             break
         }
@@ -122,6 +137,8 @@ extension MindViewController: ConditionEditDelegate {
             imagePickerController.sourceType = .photoLibrary
             imagePickerController.delegate = self
             present(imagePickerController, animated: true, completion: nil)
+        case .vocal:
+            closeButtonDidTapped()
         default:
             break
         }

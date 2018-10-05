@@ -15,7 +15,7 @@ protocol ConditionEditDelegate: class {
 }
 
 enum ControlState {
-    case lazy
+    case ready
     case active
     case done
 }
@@ -43,6 +43,16 @@ class ConditionEditView: UIView {
             cancelButton.setTitle(cancelButtonText, for: .normal)
         }
     }
+    @IBOutlet weak var timerView: RecordTimerView! {
+        didSet {
+            let nib = UINib(nibName: "RecordTimer", bundle: Bundle.main)
+            let view = nib.instantiate(withOwner: self, options: nil).first as? RecordTimerView
+            view?.frame = timerView.frame
+            timerView = view
+            self.addSubview(timerView)
+            timerView.isHidden = true
+        }
+    }
     
     var confirmButtonText: String = "Start" {
         didSet {
@@ -62,9 +72,11 @@ class ConditionEditView: UIView {
             keyImageView.image = UIImage(named: keyImageName ?? "No Image")
         }
     }
-    var controlState: ControlState = .lazy
+    var controlState: ControlState = .ready
     
     var conditionalElement: ConditionalElement = .image
+    
+    weak var delegate: ConditionEditDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -78,8 +90,6 @@ class ConditionEditView: UIView {
         self.layer.masksToBounds = true
     }
     
-    weak var delegate: ConditionEditDelegate?
-    
     @IBAction func closeButtonTapped(_ sender: UIButton) {
         delegate?.closeButtonDidTapped()
     }
@@ -90,6 +100,15 @@ class ConditionEditView: UIView {
     
     @IBAction func confirmButtonTapped(_ sender: UIButton) {
         delegate?.confirmButtonDidTapped()
+    }
+    
+    func activateTimer() {
+        timerView.isHidden = false
+        timerView.timer.fire()
+    }
+    
+    func stopTimer() {
+        timerView.timer.invalidate()
     }
     
 }
