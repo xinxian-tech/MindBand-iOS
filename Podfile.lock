@@ -1,3 +1,16 @@
-PODFILE CHECKSUM: caddacec4c60686b38a0012c2863c455daef44f2
+PODS:
+  - TapticEngine (1.2.0)
+
+DEPENDENCIES:
+  - TapticEngine
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - TapticEngine
+
+SPEC CHECKSUMS:
+  TapticEngine: ed6f5b4a2e9aa46d4e8fa69a72a7a0b6719bf8ac
+
+PODFILE CHECKSUM: 9ecffa272ceaba3f7087acd91c87beb3641da4b4
 
 COCOAPODS: 1.5.0

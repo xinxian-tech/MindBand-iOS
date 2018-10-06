@@ -226,6 +226,7 @@
 				3AFE69F9216264F100859AD3 /* Sources */,
 				3AFE69FA216264F100859AD3 /* Frameworks */,
 				3AFE69FB216264F100859AD3 /* Resources */,
+				0F808C7E4B0D9DDCAEC79D60 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -290,6 +291,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0F808C7E4B0D9DDCAEC79D60 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Mind_Band/Pods-Mind_Band-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/TapticEngine/TapticEngine.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TapticEngine.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Mind_Band/Pods-Mind_Band-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		D373347D31275A3FFA7780A1 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -480,10 +499,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4C47ZVS5JD;
 				INFOPLIST_FILE = Mind_Band/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Frost.Mind-Band";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -499,10 +515,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4C47ZVS5JD;
 				INFOPLIST_FILE = Mind_Band/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Frost.Mind-Band";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;

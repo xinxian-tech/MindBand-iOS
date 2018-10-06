@@ -8,6 +8,7 @@
 
 import UIKit
 import SceneKit
+import TapticEngine
 
 class MindViewController: UIViewController {
     
@@ -273,6 +274,7 @@ class MindViewController: UIViewController {
     }
     
     private func switchPlanetSelectStatus(planet: PlanetEnum, childNodeIndex: Int = 0) {
+        TapticEngine.impact.feedback(.heavy)
         if selectedConditions.contains(planetConditionMap[planet]!) {
             setPlanetDeselected(planet: planet, childNodeIndex: childNodeIndex)
         } else {
