@@ -7,14 +7,18 @@
 //
 
 import UIKit
+import SceneKit
 
 class MindViewController: UIViewController {
+    
+    @IBOutlet weak var scnView: SCNView!
     
     private var floatingWindowLockFrame: CGRect = CGRect(x: 23, y: 90, width: 329, height: 597)
     private var floatingWindowView: ConditionEditView?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupSCNView()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -28,9 +32,13 @@ class MindViewController: UIViewController {
         }
     }
     
+//    override var prefersStatusBarHidden: Bool {
+//        return true
+//    }
+    
     private var selectedConditions: [ConditionalElement] = [.image, .vocal, .health, .emoji]
 
-    @IBAction func pictureButtonTapped(_ sender: UIButton) {
+    func pictureButtonTapped() {
         prepareFloatingWindow()
         floatingWindowView?.conditionalElement = .image
         floatingWindowView?.keyImageName = "ImageCondition"
@@ -39,13 +47,13 @@ class MindViewController: UIViewController {
         animateFloatingWindowIn()
     }
     
-    @IBAction func weatherButtonTapped(_ sender: UIButton) {
+    func weatherButtonTapped() {
         prepareFloatingWindow()
         floatingWindowView?.conditionalElement = .weather
         animateFloatingWindowIn()
     }
     
-    @IBAction func locationButtonTapped(_ sender: UIButton) {
+    func locationButtonTapped() {
         prepareFloatingWindow()
         floatingWindowView?.keyImageName = "LocationCondition"
         floatingWindowView?.confirmButtonText = "Confirm"
@@ -53,7 +61,7 @@ class MindViewController: UIViewController {
         animateFloatingWindowIn()
     }
     
-    @IBAction func hummingButtonTapped(_ sender: UIButton) {
+    func hummingButtonTapped() {
         prepareFloatingWindow()
         floatingWindowView?.conditionalElement = .vocal
         floatingWindowView?.confirmButtonText = "Start"
@@ -64,10 +72,103 @@ class MindViewController: UIViewController {
         animateFloatingWindowIn()
     }
     
-    @IBAction func workoutButtonTapped(_ sender: UIButton) {
+    func workoutButtonTapped() {
         prepareFloatingWindow()
         floatingWindowView?.conditionalElement = .health
         animateFloatingWindowIn()
+    }
+    
+    private func setupSCNView() {
+        let scene = SCNScene()
+        
+        // Neptune Setup
+        let neptuneNode = PlanetNode(planet: .neptune)
+        neptuneNode.position = SCNVector3(0.2, 0.7, -0.3)
+        scene.rootNode.addChildNode(neptuneNode)
+        neptuneNode.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x: 0, y: 2, z: 0, duration: 20)))
+        
+        // Venus Setup
+        let venusNode = PlanetNode(planet: .venus)
+        venusNode.position = SCNVector3(0.3, 0.2, -0.1)
+        scene.rootNode.addChildNode(venusNode)
+        venusNode.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x: 0, y: 2, z: 0, duration: 20)))
+        
+        // Saturn Setup
+        let saturnNode = PlanetNode(planet: .saturn)
+        saturnNode.position = SCNVector3(-0.2, 0, 0)
+        scene.rootNode.addChildNode(saturnNode)
+        saturnNode.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x: 0, y: 2, z: 0, duration: 25)))
+        
+        // Mars Setup
+        let marsNode = PlanetNode(planet: .mars)
+        marsNode.position = SCNVector3(-0.4, 0.5, 0.1)
+        scene.rootNode.addChildNode(marsNode)
+        marsNode.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x: 0, y: 2, z: 0, duration: 37)))
+        
+        // Jupiter
+        let jupiterNode = PlanetNode(planet: .jupiter)
+        jupiterNode.position = SCNVector3(0.4, -0.3, -0.15)
+        scene.rootNode.addChildNode(jupiterNode)
+        jupiterNode.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x: 0, y: 2, z: 0, duration: 45)))
+        
+        // Camera Setup
+        let cameraNode = SCNNode()
+        cameraNode.camera = SCNCamera()
+        cameraNode.position = SCNVector3(x: 0, y: 0, z: 2)
+        scene.rootNode.addChildNode(cameraNode)
+        
+        // Environment Light Setup
+        let lightNode = SCNNode()
+        lightNode.light = SCNLight()
+        lightNode.light!.type = .omni
+        lightNode.position = SCNVector3(x: 0, y: 10, z: 10)
+        scene.rootNode.addChildNode(lightNode)
+        let ambientLightNode = SCNNode()
+        ambientLightNode.light = SCNLight()
+        ambientLightNode.light!.type = .ambient
+        ambientLightNode.light!.color = UIColor.darkGray
+        scene.rootNode.addChildNode(ambientLightNode)
+        
+        scene.background.contents = UIImage(named: "Nebula")!
+        scnView.scene = scene
+        scnView.backgroundColor = UIColor.black
+        scnView.allowsCameraControl = true
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
+        scnView.addGestureRecognizer(tapGesture)
+        let pressGesture = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress(_:)))
+        scnView.addGestureRecognizer(pressGesture)
+    }
+    
+    @objc private func handleTap(_ gestureRecognizer: UIGestureRecognizer) {
+        print("Tap Gesture Detected.")
+    }
+    
+    @objc private func handleLongPress(_ gestureRecognizer: UIGestureRecognizer) {
+        guard gestureRecognizer.state == UIGestureRecognizer.State.ended else {return}
+        let location = gestureRecognizer.location(in: scnView)
+        let hitResults = scnView.hitTest(location, options: [:])
+        if hitResults.count != 0 {
+            let result = hitResults.first!.node as? PlanetNode
+            guard result != nil else {
+                // The result is saturn's loop
+                pictureButtonTapped()
+                return
+            }
+            switch result!.planetType {
+            case .saturn:
+                pictureButtonTapped()
+            case .jupiter:
+                weatherButtonTapped()
+            case .mars:
+                hummingButtonTapped()
+            case .neptune:
+                locationButtonTapped()
+            case .venus:
+                workoutButtonTapped()
+            default:
+                break
+            }
+        }
     }
     
     private func prepareFloatingWindow() {

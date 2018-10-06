@@ -50,9 +50,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Nebula" translatesAutoresizingMaskIntoConstraints="NO" id="hOW-RT-dUi">
+                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KDp-jb-pHm">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
-                            </imageView>
+                            </sceneKitView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AiO-pq-0l5">
                                 <rect key="frame" x="130.66666666666666" y="445.33333333333331" width="114" height="113.99999999999994"/>
                                 <constraints>
@@ -62,46 +62,6 @@
                                 <state key="normal" image="AddButton"/>
                                 <connections>
                                     <segue destination="psg-S9-Sof" kind="presentation" identifier="showGenerateViewController" id="10a-Jc-HBc"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Zm-6N-WKL">
-                                <rect key="frame" x="35" y="309" width="107" height="133"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="Picture"/>
-                                <connections>
-                                    <action selector="pictureButtonTapped:" destination="fFY-Bk-VCI" eventType="touchUpInside" id="f24-w3-gAa"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="umo-P5-oHF">
-                                <rect key="frame" x="220" y="309" width="105" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="Weather"/>
-                                <connections>
-                                    <action selector="weatherButtonTapped:" destination="fFY-Bk-VCI" eventType="touchUpInside" id="22v-fJ-kYw"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xFD-Fl-DZd">
-                                <rect key="frame" x="95" y="206" width="102" height="129"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="Location"/>
-                                <connections>
-                                    <action selector="locationButtonTapped:" destination="fFY-Bk-VCI" eventType="touchUpInside" id="YaC-IT-J72"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fkX-p6-apz">
-                                <rect key="frame" x="257" y="105" width="84" height="119"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="Humming"/>
-                                <connections>
-                                    <action selector="hummingButtonTapped:" destination="fFY-Bk-VCI" eventType="touchUpInside" id="Any-Ua-qb6"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="trW-Gv-muz">
-                                <rect key="frame" x="35" y="81" width="122" height="98"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="Workout"/>
-                                <connections>
-                                    <action selector="workoutButtonTapped:" destination="fFY-Bk-VCI" eventType="touchUpInside" id="Qx7-0Q-kD6"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wMk-Qe-fIL">
@@ -122,17 +82,20 @@ Make your every day MEMO.</string>
                         <constraints>
                             <constraint firstItem="dln-cC-CtS" firstAttribute="trailing" secondItem="wMk-Qe-fIL" secondAttribute="trailing" constant="16" id="50d-sT-AaB"/>
                             <constraint firstItem="AiO-pq-0l5" firstAttribute="centerX" secondItem="dln-cC-CtS" secondAttribute="centerX" id="6Vs-kn-aee"/>
+                            <constraint firstItem="KDp-jb-pHm" firstAttribute="trailing" secondItem="dln-cC-CtS" secondAttribute="trailing" id="Ak1-wl-5fc"/>
                             <constraint firstItem="AiO-pq-0l5" firstAttribute="centerY" secondItem="dln-cC-CtS" secondAttribute="centerY" multiplier="1.3" id="B01-kg-yoc"/>
-                            <constraint firstItem="hOW-RT-dUi" firstAttribute="trailing" secondItem="dln-cC-CtS" secondAttribute="trailing" id="EME-8m-pyG"/>
+                            <constraint firstItem="KDp-jb-pHm" firstAttribute="leading" secondItem="dln-cC-CtS" secondAttribute="leading" id="KBs-4f-X9y"/>
                             <constraint firstItem="dln-cC-CtS" firstAttribute="bottom" secondItem="wMk-Qe-fIL" secondAttribute="bottom" constant="54" id="NcR-DK-s3u"/>
-                            <constraint firstItem="hOW-RT-dUi" firstAttribute="bottom" secondItem="dln-cC-CtS" secondAttribute="bottom" id="OpP-mi-XbS"/>
-                            <constraint firstItem="hOW-RT-dUi" firstAttribute="top" secondItem="914-t5-oj5" secondAttribute="top" id="bHT-9g-nZE"/>
                             <constraint firstItem="wMk-Qe-fIL" firstAttribute="leading" secondItem="dln-cC-CtS" secondAttribute="leading" constant="16" id="eoZ-oG-0z3"/>
-                            <constraint firstItem="hOW-RT-dUi" firstAttribute="leading" secondItem="dln-cC-CtS" secondAttribute="leading" id="gqh-BC-zyv"/>
+                            <constraint firstItem="KDp-jb-pHm" firstAttribute="top" secondItem="914-t5-oj5" secondAttribute="top" id="hcD-bT-3TM"/>
+                            <constraint firstItem="KDp-jb-pHm" firstAttribute="bottom" secondItem="dln-cC-CtS" secondAttribute="bottom" id="u0d-jy-ceA"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dln-cC-CtS"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Mind" image="MindBarIcon" id="mFE-eo-YuE"/>
+                    <connections>
+                        <outlet property="scnView" destination="KDp-jb-pHm" id="D3D-iH-E1h"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Rc-QK-nBD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -353,15 +316,9 @@ Make your every day MEMO.</string>
     <resources>
         <image name="AddButton" width="432" height="432"/>
         <image name="CommunityBarIcon" width="81" height="81"/>
-        <image name="Humming" width="312" height="414"/>
-        <image name="Location" width="312" height="384"/>
         <image name="MindBarIcon" width="72" height="81"/>
-        <image name="Nebula" width="1125" height="2436"/>
         <image name="PersonalBarIcon" width="78" height="78"/>
-        <image name="Picture" width="327" height="453"/>
         <image name="PortraitBackground" width="1125" height="696"/>
         <image name="UserPortrait" width="959" height="959"/>
-        <image name="Weather" width="333" height="441"/>
-        <image name="Workout" width="375" height="327"/>
     </resources>
 </document>

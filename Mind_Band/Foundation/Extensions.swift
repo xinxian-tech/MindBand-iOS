@@ -49,6 +49,8 @@ extension UIButton {
 
 
 extension Int {
+    var degreesToRadians: Double { return Double(self) * .pi / 180 }
+    
     func digitExtended(to digits: Int) -> String {
         var stringRepresentation = String(self)
         while stringRepresentation.count < digits {
@@ -57,3 +59,4 @@ extension Int {
         return stringRepresentation
     }
 }
+

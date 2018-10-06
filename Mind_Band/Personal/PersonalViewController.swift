@@ -17,6 +17,7 @@ class PersonalViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         melodyTableView.tableFooterView = UIView(frame: CGRect.zero)
+        // melodyTableView.contentInset = UIEdgeInsets(top: -44,left: 0,bottom: 0,right: 0)
     }
 
 }
