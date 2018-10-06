@@ -15,6 +15,18 @@ class MindViewController: UIViewController {
     
     private var floatingWindowLockFrame: CGRect = CGRect(x: 23, y: 90, width: 329, height: 597)
     private var floatingWindowView: ConditionEditView?
+    
+    private var inactiveTextMaterial: SCNMaterial = {
+        let material = SCNMaterial()
+        material.diffuse.contents = UIColor.lightGray
+        return material
+    }()
+    
+    private var activeTextMaterial: SCNMaterial = {
+        let material = SCNMaterial()
+        material.diffuse.contents = UIColor(red: 1, green: 72/255, blue: 133/255, alpha: 1)
+        return material
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,49 +44,62 @@ class MindViewController: UIViewController {
         }
     }
     
-//    override var prefersStatusBarHidden: Bool {
-//        return true
-//    }
-    
-    private var selectedConditions: [ConditionalElement] = [.image, .vocal, .health, .emoji]
+    private var selectedConditions: [ConditionalElement] = []
+    private var planetConditionMap: [PlanetEnum:ConditionalElement] = [
+        .neptune : .location,
+        .venus : .health,
+        .saturn : .image,
+        .mars : .vocal,
+        .jupiter : .weather
+    ]
 
-    func pictureButtonTapped() {
+    private func pictureButtonTapped() {
         prepareFloatingWindow()
         floatingWindowView?.conditionalElement = .image
         floatingWindowView?.keyImageName = "ImageCondition"
         floatingWindowView?.confirmButtonText = "Camera"
         floatingWindowView?.cancelButtonText = "Album"
+        floatingWindowView?.titleLabel.text = "Add a Picture"
+        floatingWindowView?.descriptionLabel.text = "Add a picture to the melody, and feel its feeling."
         animateFloatingWindowIn()
     }
     
-    func weatherButtonTapped() {
+    private func weatherButtonTapped() {
         prepareFloatingWindow()
         floatingWindowView?.conditionalElement = .weather
+        floatingWindowView?.keyImageName = "WorkoutCondition"
+        floatingWindowView?.titleLabel.text = "Add a Weather"
+        floatingWindowView?.descriptionLabel.text = "Turn the weather into a part of melody."
         animateFloatingWindowIn()
     }
     
-    func locationButtonTapped() {
+    private func locationButtonTapped() {
         prepareFloatingWindow()
         floatingWindowView?.keyImageName = "LocationCondition"
         floatingWindowView?.confirmButtonText = "Confirm"
         floatingWindowView?.cancelButtonText = "Edit"
+        floatingWindowView?.titleLabel.text = "Add a Location"
+        floatingWindowView?.descriptionLabel.text = "Listen to the melody of the certain location."
         animateFloatingWindowIn()
     }
     
-    func hummingButtonTapped() {
+    private func hummingButtonTapped() {
         prepareFloatingWindow()
         floatingWindowView?.conditionalElement = .vocal
+        floatingWindowView?.keyImageName = "HummingCondition"
         floatingWindowView?.confirmButtonText = "Start"
         floatingWindowView?.confirmButton.backgroundColor = UIColor(red: 249/255, green:
             58/255, blue: 96/255, alpha: 0.6)
         floatingWindowView?.cancelButtonText = "Cancel"
-        floatingWindowView?.keyImageName = "HummingCondition"
         animateFloatingWindowIn()
     }
     
-    func workoutButtonTapped() {
+    private func workoutButtonTapped() {
         prepareFloatingWindow()
         floatingWindowView?.conditionalElement = .health
+        floatingWindowView?.keyImageName = "WorkoutCondition"
+        floatingWindowView?.titleLabel.text = "Add Workout Info"
+        floatingWindowView?.descriptionLabel.text = "The melody would tell what you're feeling right now."
         animateFloatingWindowIn()
     }
     
@@ -84,32 +109,62 @@ class MindViewController: UIViewController {
         // Neptune Setup
         let neptuneNode = PlanetNode(planet: .neptune)
         neptuneNode.position = SCNVector3(0.2, 0.7, -0.3)
+        neptuneNode.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x: 0, y: 2, z: 0, duration: 30)))
+        let locationText = SCNText(string: "Location", extrusionDepth: 0.02)
+        locationText.firstMaterial = inactiveTextMaterial
+        let neptuneTextNode = SCNNode(geometry: locationText)
+        neptuneTextNode.scale = SCNVector3(0.005, 0.005, 0.005)
+        neptuneTextNode.position = SCNVector3(-0.11, -0.25, 0)
+        neptuneNode.addChildNode(neptuneTextNode)
         scene.rootNode.addChildNode(neptuneNode)
-        neptuneNode.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x: 0, y: 2, z: 0, duration: 20)))
         
         // Venus Setup
         let venusNode = PlanetNode(planet: .venus)
         venusNode.position = SCNVector3(0.3, 0.2, -0.1)
+        venusNode.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x: 0, y: 2, z: 0, duration: 40)))
+        let workoutText = SCNText(string: "Workout", extrusionDepth: 0.02)
+        workoutText.firstMaterial = inactiveTextMaterial
+        let venusTextNode = SCNNode(geometry: workoutText)
+        venusTextNode.scale = SCNVector3(0.005, 0.005, 0.005)
+        venusTextNode.position = SCNVector3(-0.11, -0.20, 0)
+        venusNode.addChildNode(venusTextNode)
         scene.rootNode.addChildNode(venusNode)
-        venusNode.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x: 0, y: 2, z: 0, duration: 20)))
         
         // Saturn Setup
         let saturnNode = PlanetNode(planet: .saturn)
         saturnNode.position = SCNVector3(-0.2, 0, 0)
+        saturnNode.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x: 0, y: 2, z: 0, duration: 35)))
+        let imageText = SCNText(string: "Image", extrusionDepth: 0.02)
+        imageText.firstMaterial = inactiveTextMaterial
+        let saturnTextNode = SCNNode(geometry: imageText)
+        saturnTextNode.scale = SCNVector3(0.005, 0.005, 0.005)
+        saturnTextNode.position = SCNVector3(-0.07, -0.25, 0)
+        saturnNode.addChildNode(saturnTextNode)
         scene.rootNode.addChildNode(saturnNode)
-        saturnNode.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x: 0, y: 2, z: 0, duration: 25)))
         
         // Mars Setup
         let marsNode = PlanetNode(planet: .mars)
         marsNode.position = SCNVector3(-0.4, 0.5, 0.1)
+        marsNode.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x: 0, y: 2, z: 0, duration: 52)))
+        let hummingText = SCNText(string: "Humming", extrusionDepth: 0.02)
+        hummingText.firstMaterial = inactiveTextMaterial
+        let marsTextNode = SCNNode(geometry: hummingText)
+        marsTextNode.scale = SCNVector3(0.005, 0.005, 0.005)
+        marsTextNode.position = SCNVector3(-0.12, -0.18, 0)
+        marsNode.addChildNode(marsTextNode)
         scene.rootNode.addChildNode(marsNode)
-        marsNode.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x: 0, y: 2, z: 0, duration: 37)))
         
         // Jupiter
         let jupiterNode = PlanetNode(planet: .jupiter)
         jupiterNode.position = SCNVector3(0.4, -0.3, -0.15)
+        jupiterNode.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x: 0, y: 2, z: 0, duration: 84)))
+        let weatherText = SCNText(string: "Weather", extrusionDepth: 0.02)
+        weatherText.firstMaterial = inactiveTextMaterial
+        let jupiterTextNode = SCNNode(geometry: weatherText)
+        jupiterTextNode.scale = SCNVector3(0.005, 0.005, 0.005)
+        jupiterTextNode.position = SCNVector3(-0.11, -0.25, 0)
+        jupiterNode.addChildNode(jupiterTextNode)
         scene.rootNode.addChildNode(jupiterNode)
-        jupiterNode.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x: 0, y: 2, z: 0, duration: 45)))
         
         // Camera Setup
         let cameraNode = SCNNode()
@@ -140,11 +195,34 @@ class MindViewController: UIViewController {
     }
     
     @objc private func handleTap(_ gestureRecognizer: UIGestureRecognizer) {
-        print("Tap Gesture Detected.")
+        let location = gestureRecognizer.location(in: scnView)
+        let hitResults = scnView.hitTest(location, options: [:])
+        if hitResults.count != 0 {
+            let result = hitResults.first!.node as? PlanetNode
+            guard result != nil else {
+                switchPlanetSelectStatus(planet: .saturn, childNodeIndex: 2)
+                return
+            }
+            switch result!.planetType {
+            case .saturn:
+                switchPlanetSelectStatus(planet: .saturn, childNodeIndex: 2)
+            case .jupiter:
+                switchPlanetSelectStatus(planet: .jupiter)
+            case .mars:
+                switchPlanetSelectStatus(planet: .mars)
+            case .neptune:
+                switchPlanetSelectStatus(planet: .neptune)
+            case .venus:
+                switchPlanetSelectStatus(planet: .venus)
+            default:
+                break
+            }
+        }
     }
     
     @objc private func handleLongPress(_ gestureRecognizer: UIGestureRecognizer) {
-        guard gestureRecognizer.state == UIGestureRecognizer.State.ended else {return}
+        guard gestureRecognizer.state == UIGestureRecognizer.State.began else {return}
+        gestureRecognizer.state = .ended
         let location = gestureRecognizer.location(in: scnView)
         let hitResults = scnView.hitTest(location, options: [:])
         if hitResults.count != 0 {
@@ -194,6 +272,32 @@ class MindViewController: UIViewController {
         }, completion: nil)
     }
     
+    private func switchPlanetSelectStatus(planet: PlanetEnum, childNodeIndex: Int = 0) {
+        if selectedConditions.contains(planetConditionMap[planet]!) {
+            setPlanetDeselected(planet: planet, childNodeIndex: childNodeIndex)
+        } else {
+            setPlanetSelected(planet: planet, childNodeIndex: childNodeIndex)
+        }
+    }
+    
+    private func setPlanetSelected(planet: PlanetEnum, childNodeIndex: Int = 0) {
+        for node in scnView.scene!.rootNode.childNodes {
+            if node is PlanetNode && (node as! PlanetNode).planetType == planet {
+                node.childNodes[childNodeIndex].geometry?.firstMaterial = activeTextMaterial
+                selectedConditions.append(planetConditionMap[planet]!)
+            }
+        }
+    }
+    
+    private func setPlanetDeselected(planet: PlanetEnum, childNodeIndex: Int = 0) {
+        for node in scnView.scene!.rootNode.childNodes {
+            if node is PlanetNode && (node as! PlanetNode).planetType == planet {
+                node.childNodes[childNodeIndex].geometry?.firstMaterial = inactiveTextMaterial
+                selectedConditions = selectedConditions.filter({$0 != planetConditionMap[planet]!})
+            }
+        }
+    }
+    
 }
 
 
@@ -238,10 +342,8 @@ extension MindViewController: ConditionEditDelegate {
             imagePickerController.sourceType = .photoLibrary
             imagePickerController.delegate = self
             present(imagePickerController, animated: true, completion: nil)
-        case .vocal:
-            closeButtonDidTapped()
         default:
-            break
+            closeButtonDidTapped()
         }
     }
 }
