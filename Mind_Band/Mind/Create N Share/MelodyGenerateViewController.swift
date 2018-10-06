@@ -17,19 +17,34 @@ class MelodyGenerateViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var videoWKWebView: WKWebView!
     
-    var conditionalElements: [ConditionalElement] = [.image, .vocal, .health, .emoji]
+    var conditionalElements: [ConditionalElement] = []
     
     var audioPlayer: AVPlayer?
     
+    let melody: GeneratedMelody = {
+        let melody = MBDataManager.defaultManager.getAndSaveRandomGeneratedMelody()
+        return melody
+    }()
+    var shouldSaveMelody: Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        titleLabel.text = melody.melodyTitle
         setupGradientView()
         setupWebKitView()
         loadGeneratedVideo()
         loadMelodyAudio()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        audioPlayer?.pause()
+    }
+    
     @IBAction func dismissButtonTapped(_ sender: UIButton) {
+        if !shouldSaveMelody {
+            MBDataManager.defaultManager.removeMelody(id: melody.id!)
+        }
         dismiss(animated: true, completion: nil)
     }
     
@@ -50,12 +65,12 @@ class MelodyGenerateViewController: UIViewController {
     }
     
     private func loadMelodyAudio() {
-        audioPlayer = AVPlayer(url: Bundle.main.url(forResource: "Lotus", withExtension: ".m4a")!)
+        audioPlayer = AVPlayer(url: Bundle.main.url(forResource: melody.defaultSongName, withExtension: ".m4a")!)
         audioPlayer?.play()
     }
     
     private func loadGeneratedVideo() {
-        let gifURL = Bundle.main.url(forResource: "Spring_1", withExtension: "gif")!
+        let gifURL = Bundle.main.url(forResource: melody.defaultVideoName, withExtension: "gif")!
         let gifData = try! Data(contentsOf: gifURL)
         videoWKWebView.load(gifData, mimeType: "image/gif", characterEncodingName: "UTF-8", baseURL: gifURL)
         delay(for: durationForGifData(data: gifData), block: {self.loadGeneratedVideo()})

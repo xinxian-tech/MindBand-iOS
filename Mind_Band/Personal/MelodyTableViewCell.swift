@@ -10,8 +10,15 @@ import UIKit
 
 class MelodyTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var titleImageView: UIImageView!
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: UILabel!
-
+    @IBOutlet weak var backgroundImageView: UIImageView!
+    @IBOutlet weak var waveImageView: UIImageView!
+    @IBOutlet weak var melodyTitleLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    
+    var melody: GeneratedMelody? {
+        didSet {
+            
+        }
+    }
+    
 }

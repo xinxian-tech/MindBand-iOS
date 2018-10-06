@@ -10,8 +10,6 @@
 		3A157F782166F7C200CF4B0B /* CommunityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A157F772166F7C200CF4B0B /* CommunityViewController.swift */; };
 		3A157F7C2167052B00CF4B0B /* UserDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A157F7B2167052B00CF4B0B /* UserDetailTableViewCell.swift */; };
 		3A157F7F216705CC00CF4B0B /* MelodyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A157F7E216705CC00CF4B0B /* MelodyTableViewCell.swift */; };
-		3A157F822167084500CF4B0B /* GeneratedMelody+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A157F802167084400CF4B0B /* GeneratedMelody+CoreDataProperties.swift */; };
-		3A157F832167084500CF4B0B /* GeneratedMelody+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A157F812167084400CF4B0B /* GeneratedMelody+CoreDataClass.swift */; };
 		3A157F85216708E800CF4B0B /* PersonalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A157F84216708E800CF4B0B /* PersonalViewController.swift */; };
 		3A1A08BC2163B08A005F4251 /* Lotus.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 3A1A08BB2163B06C005F4251 /* Lotus.m4a */; };
 		3A1A08BE2163B125005F4251 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1A08BD2163B125005F4251 /* Extensions.swift */; };
@@ -27,8 +25,12 @@
 		3A57CE722163991F00D8B864 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A57CE712163991F00D8B864 /* Default-568h@2x.png */; };
 		3A57CE7921639C3600D8B864 /* Spring_1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3A57CE7821639C3600D8B864 /* Spring_1.gif */; };
 		3A57CE7B21639C3F00D8B864 /* Spring_2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3A57CE7A21639C3F00D8B864 /* Spring_2.gif */; };
+		3A6DD7972168F4FB007AD599 /* PlaceholderGeneration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6DD7962168F4FB007AD599 /* PlaceholderGeneration.swift */; };
+		3A6DD79E21690FA5007AD599 /* GeneratedMelody+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6DD79C21690FA5007AD599 /* GeneratedMelody+CoreDataClass.swift */; };
+		3A6DD79F21690FA5007AD599 /* GeneratedMelody+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6DD79D21690FA5007AD599 /* GeneratedMelody+CoreDataProperties.swift */; };
 		3ACD525121650CE1004271C9 /* RecordTimer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3ACD525021650CE1004271C9 /* RecordTimer.xib */; };
 		3ACD525321650CF4004271C9 /* RecordTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACD525221650CF4004271C9 /* RecordTimerView.swift */; };
+		3AED3B7E216916550074BA44 /* MBDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AED3B7D216916550074BA44 /* MBDataManager.swift */; };
 		3AFE6A01216264F200859AD3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFE6A00216264F200859AD3 /* AppDelegate.swift */; };
 		3AFE6A06216264F200859AD3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AFE6A04216264F200859AD3 /* Main.storyboard */; };
 		3AFE6A08216264F300859AD3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AFE6A07216264F300859AD3 /* Assets.xcassets */; };
@@ -40,8 +42,6 @@
 		3A157F772166F7C200CF4B0B /* CommunityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityViewController.swift; sourceTree = "<group>"; };
 		3A157F7B2167052B00CF4B0B /* UserDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailTableViewCell.swift; sourceTree = "<group>"; };
 		3A157F7E216705CC00CF4B0B /* MelodyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelodyTableViewCell.swift; sourceTree = "<group>"; };
-		3A157F802167084400CF4B0B /* GeneratedMelody+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "GeneratedMelody+CoreDataProperties.swift"; path = "/Users/licanchen/Desktop/Mind_Band/Mind_Band/Foundation/GeneratedMelody+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
-		3A157F812167084400CF4B0B /* GeneratedMelody+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "GeneratedMelody+CoreDataClass.swift"; path = "/Users/licanchen/Desktop/Mind_Band/Mind_Band/Foundation/GeneratedMelody+CoreDataClass.swift"; sourceTree = "<absolute>"; };
 		3A157F84216708E800CF4B0B /* PersonalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalViewController.swift; sourceTree = "<group>"; };
 		3A1A08BB2163B06C005F4251 /* Lotus.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Lotus.m4a; sourceTree = "<group>"; };
 		3A1A08BD2163B125005F4251 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -57,8 +57,12 @@
 		3A57CE712163991F00D8B864 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		3A57CE7821639C3600D8B864 /* Spring_1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Spring_1.gif; sourceTree = "<group>"; };
 		3A57CE7A21639C3F00D8B864 /* Spring_2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Spring_2.gif; sourceTree = "<group>"; };
+		3A6DD7962168F4FB007AD599 /* PlaceholderGeneration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderGeneration.swift; sourceTree = "<group>"; };
+		3A6DD79C21690FA5007AD599 /* GeneratedMelody+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "GeneratedMelody+CoreDataClass.swift"; path = "/Users/licanchen/Desktop/Mind_Band/Mind_Band/Foundation/GeneratedMelody+CoreDataClass.swift"; sourceTree = "<absolute>"; };
+		3A6DD79D21690FA5007AD599 /* GeneratedMelody+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "GeneratedMelody+CoreDataProperties.swift"; path = "/Users/licanchen/Desktop/Mind_Band/Mind_Band/Foundation/GeneratedMelody+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
 		3ACD525021650CE1004271C9 /* RecordTimer.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecordTimer.xib; sourceTree = "<group>"; };
 		3ACD525221650CF4004271C9 /* RecordTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordTimerView.swift; sourceTree = "<group>"; };
+		3AED3B7D216916550074BA44 /* MBDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBDataManager.swift; sourceTree = "<group>"; };
 		3AFE69FD216264F100859AD3 /* Mind_Band.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mind_Band.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AFE6A00216264F200859AD3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3AFE6A05216264F200859AD3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -144,8 +148,8 @@
 			children = (
 				3A57CE5E216302DE00D8B864 /* Create N Share.storyboard */,
 				3A57CE602163057300D8B864 /* MelodyGenerateViewController.swift */,
-				3A57CE6421630E0100D8B864 /* ConditionElementCollectionViewCell.swift */,
 				3A57CE622163066D00D8B864 /* MelodyShareViewController.swift */,
+				3A57CE6421630E0100D8B864 /* ConditionElementCollectionViewCell.swift */,
 			);
 			path = "Create N Share";
 			sourceTree = "<group>";
@@ -154,10 +158,12 @@
 			isa = PBXGroup;
 			children = (
 				3A57CE662163181F00D8B864 /* BasicStructures.swift */,
+				3A6DD7962168F4FB007AD599 /* PlaceholderGeneration.swift */,
+				3AED3B7D216916550074BA44 /* MBDataManager.swift */,
 				3A1A08BD2163B125005F4251 /* Extensions.swift */,
 				3A57CE6E2163987200D8B864 /* MBDataModel.xcdatamodeld */,
-				3A157F812167084400CF4B0B /* GeneratedMelody+CoreDataClass.swift */,
-				3A157F802167084400CF4B0B /* GeneratedMelody+CoreDataProperties.swift */,
+				3A6DD79C21690FA5007AD599 /* GeneratedMelody+CoreDataClass.swift */,
+				3A6DD79D21690FA5007AD599 /* GeneratedMelody+CoreDataProperties.swift */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -336,12 +342,15 @@
 			files = (
 				3A57CE702163987200D8B864 /* MBDataModel.xcdatamodeld in Sources */,
 				3A1A08C221645550005F4251 /* ConditionEditView.swift in Sources */,
+				3AED3B7E216916550074BA44 /* MBDataManager.swift in Sources */,
 				3A57CE612163057300D8B864 /* MelodyGenerateViewController.swift in Sources */,
+				3A6DD79E21690FA5007AD599 /* GeneratedMelody+CoreDataClass.swift in Sources */,
 				3A157F7F216705CC00CF4B0B /* MelodyTableViewCell.swift in Sources */,
 				3A157F7C2167052B00CF4B0B /* UserDetailTableViewCell.swift in Sources */,
 				3ACD525321650CF4004271C9 /* RecordTimerView.swift in Sources */,
+				3A6DD7972168F4FB007AD599 /* PlaceholderGeneration.swift in Sources */,
+				3A6DD79F21690FA5007AD599 /* GeneratedMelody+CoreDataProperties.swift in Sources */,
 				3A57CE632163066D00D8B864 /* MelodyShareViewController.swift in Sources */,
-				3A157F822167084500CF4B0B /* GeneratedMelody+CoreDataProperties.swift in Sources */,
 				3AFE6A01216264F200859AD3 /* AppDelegate.swift in Sources */,
 				3A1A08C02164516E005F4251 /* MindViewController.swift in Sources */,
 				3A157F85216708E800CF4B0B /* PersonalViewController.swift in Sources */,
@@ -349,7 +358,6 @@
 				3A157F782166F7C200CF4B0B /* CommunityViewController.swift in Sources */,
 				3A57CE6521630E0100D8B864 /* ConditionElementCollectionViewCell.swift in Sources */,
 				3A1A08BE2163B125005F4251 /* Extensions.swift in Sources */,
-				3A157F832167084500CF4B0B /* GeneratedMelody+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -499,7 +507,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4C47ZVS5JD;
 				INFOPLIST_FILE = Mind_Band/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Frost.Mind-Band";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -515,7 +526,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4C47ZVS5JD;
 				INFOPLIST_FILE = Mind_Band/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Frost.Mind-Band";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
