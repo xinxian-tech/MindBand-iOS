@@ -15,11 +15,12 @@ class MelodyGenerateViewController: UIViewController {
     @IBOutlet weak var conditionElementCollectionView: UICollectionView!
     @IBOutlet weak var topGradientView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var videoWKWebView: WKWebView!
+    @IBOutlet weak var playerView: UIView!
     
     var conditionalElements: [ConditionalElement] = []
     
     var audioPlayer: AVPlayer?
+    var videoPlayer: AVPlayer?
     
     let melody: GeneratedMelody = {
         let melody = MBDataManager.defaultManager.getAndSaveRandomGeneratedMelody()
@@ -31,14 +32,20 @@ class MelodyGenerateViewController: UIViewController {
         super.viewDidLoad()
         titleLabel.text = melody.melodyTitle
         setupGradientView()
-        setupWebKitView()
-        loadGeneratedVideo()
         loadMelodyAudio()
+        loadVideoPlayer()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         audioPlayer?.pause()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showMelodyShareViewController" {
+            let destination = segue.destination as! MelodyShareViewController
+            destination.melody = melody
+        }
     }
     
     @IBAction func dismissButtonTapped(_ sender: UIButton) {
@@ -56,24 +63,25 @@ class MelodyGenerateViewController: UIViewController {
         topGradientView.layer.insertSublayer(gradientLayer, at: 0)
     }
     
-    private func setupWebKitView() {
-        videoWKWebView.isOpaque = false
-        videoWKWebView.scrollView.backgroundColor = .black
-        videoWKWebView.scrollView.isScrollEnabled = false
-        videoWKWebView.scrollView.maximumZoomScale = 1
-        videoWKWebView.scrollView.minimumZoomScale = 1
-    }
-    
     private func loadMelodyAudio() {
-        audioPlayer = AVPlayer(url: Bundle.main.url(forResource: melody.defaultSongName, withExtension: ".m4a")!)
+        audioPlayer = AVPlayer(url: Bundle.main.url(forResource: melody.defaultSongName, withExtension: "m4a")!)
         audioPlayer?.play()
     }
     
-    private func loadGeneratedVideo() {
-        let gifURL = Bundle.main.url(forResource: melody.defaultVideoName, withExtension: "gif")!
-        let gifData = try! Data(contentsOf: gifURL)
-        videoWKWebView.load(gifData, mimeType: "image/gif", characterEncodingName: "UTF-8", baseURL: gifURL)
-        delay(for: durationForGifData(data: gifData), block: {self.loadGeneratedVideo()})
+    private func loadVideoPlayer() {
+        videoPlayer = AVPlayer(url: Bundle.main.url(forResource: melody.defaultVideoName!, withExtension: "mp4")!)
+        let playerLayer = AVPlayerLayer(player: videoPlayer)
+        playerLayer.frame = self.view.bounds
+        playerView.layer.addSublayer(playerLayer)
+        videoPlayer?.play()
+        NotificationCenter.default.addObserver(self, selector: #selector(replayVideo),
+                                               name: NSNotification.Name.AVPlayerItemDidPlayToEndTime,
+                                               object: videoPlayer?.currentItem)
+    }
+    
+    @objc private func replayVideo() {
+        videoPlayer?.seek(to: CMTime.zero)
+        videoPlayer?.play()
     }
     
 }

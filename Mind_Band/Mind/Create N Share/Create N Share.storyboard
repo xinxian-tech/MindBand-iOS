@@ -17,16 +17,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <wkWebView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Suj-dH-ntT">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3o6-D0-Qun">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <wkWebViewConfiguration key="configuration">
-                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                    <wkPreferences key="preferences"/>
-                                </wkWebViewConfiguration>
-                            </wkWebView>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="deO-xa-KAE">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                                 <subviews>
@@ -88,7 +82,7 @@
                                 </constraints>
                                 <state key="normal" image="ShareButton"/>
                                 <connections>
-                                    <segue destination="sXq-4M-7NY" kind="show" id="8mF-Tf-tWG"/>
+                                    <segue destination="sXq-4M-7NY" kind="show" identifier="showMelodyShareViewController" id="8mF-Tf-tWG"/>
                                 </connections>
                             </button>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Agk-ub-WNe">
@@ -157,10 +151,14 @@
                             <constraint firstItem="deO-xa-KAE" firstAttribute="leading" secondItem="DK9-vm-faF" secondAttribute="leading" id="56l-lG-afJ"/>
                             <constraint firstItem="NeQ-nR-jMW" firstAttribute="top" secondItem="DK9-vm-faF" secondAttribute="top" constant="10" id="8iA-du-Rly"/>
                             <constraint firstItem="NeQ-nR-jMW" firstAttribute="leading" secondItem="DK9-vm-faF" secondAttribute="leading" constant="16" id="B5V-Bl-y5P"/>
+                            <constraint firstItem="3o6-D0-Qun" firstAttribute="leading" secondItem="DK9-vm-faF" secondAttribute="leading" id="HNi-Ff-Ifl"/>
                             <constraint firstItem="a9p-yu-a0r" firstAttribute="top" secondItem="DK9-vm-faF" secondAttribute="top" constant="10" id="KMr-4U-693"/>
+                            <constraint firstItem="3o6-D0-Qun" firstAttribute="top" secondItem="xqT-Om-Dhq" secondAttribute="top" id="LTu-Fq-pQh"/>
+                            <constraint firstAttribute="bottom" secondItem="3o6-D0-Qun" secondAttribute="bottom" id="Q52-FA-4jT"/>
                             <constraint firstItem="deO-xa-KAE" firstAttribute="top" secondItem="xqT-Om-Dhq" secondAttribute="top" id="QU2-9f-jAz"/>
                             <constraint firstItem="Agk-ub-WNe" firstAttribute="leading" secondItem="DK9-vm-faF" secondAttribute="leading" id="V5g-GS-Lhd"/>
                             <constraint firstItem="deO-xa-KAE" firstAttribute="trailing" secondItem="DK9-vm-faF" secondAttribute="trailing" id="eGy-vr-aoe"/>
+                            <constraint firstItem="3o6-D0-Qun" firstAttribute="trailing" secondItem="DK9-vm-faF" secondAttribute="trailing" id="ecJ-ek-ZHf"/>
                             <constraint firstAttribute="bottom" secondItem="Agk-ub-WNe" secondAttribute="bottom" id="g1i-Aa-BW7"/>
                             <constraint firstItem="DK9-vm-faF" firstAttribute="trailing" secondItem="a9p-yu-a0r" secondAttribute="trailing" constant="16" id="wJS-Zf-HGI"/>
                             <constraint firstItem="Agk-ub-WNe" firstAttribute="trailing" secondItem="DK9-vm-faF" secondAttribute="trailing" id="yjk-Ry-J5f"/>
@@ -170,9 +168,9 @@
                     <navigationItem key="navigationItem" id="CJx-TR-08z"/>
                     <connections>
                         <outlet property="conditionElementCollectionView" destination="KKG-4W-gc5" id="ksp-hp-iOj"/>
+                        <outlet property="playerView" destination="3o6-D0-Qun" id="VM2-Vz-SFi"/>
                         <outlet property="titleLabel" destination="boe-xF-k8P" id="bpP-a4-isw"/>
                         <outlet property="topGradientView" destination="deO-xa-KAE" id="zGx-4c-PU3"/>
-                        <outlet property="videoWKWebView" destination="Suj-dH-ntT" id="y8X-Ee-TDG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aTN-hg-q9Y" userLabel="First Responder" sceneMemberID="firstResponder"/>

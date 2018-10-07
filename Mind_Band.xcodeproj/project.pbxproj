@@ -23,11 +23,11 @@
 		3A57CE672163181F00D8B864 /* BasicStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A57CE662163181F00D8B864 /* BasicStructures.swift */; };
 		3A57CE702163987200D8B864 /* MBDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3A57CE6E2163987200D8B864 /* MBDataModel.xcdatamodeld */; };
 		3A57CE722163991F00D8B864 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A57CE712163991F00D8B864 /* Default-568h@2x.png */; };
-		3A57CE7921639C3600D8B864 /* Spring_1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3A57CE7821639C3600D8B864 /* Spring_1.gif */; };
-		3A57CE7B21639C3F00D8B864 /* Spring_2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3A57CE7A21639C3F00D8B864 /* Spring_2.gif */; };
 		3A6DD7972168F4FB007AD599 /* PlaceholderGeneration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6DD7962168F4FB007AD599 /* PlaceholderGeneration.swift */; };
 		3A6DD79E21690FA5007AD599 /* GeneratedMelody+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6DD79C21690FA5007AD599 /* GeneratedMelody+CoreDataClass.swift */; };
 		3A6DD79F21690FA5007AD599 /* GeneratedMelody+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6DD79D21690FA5007AD599 /* GeneratedMelody+CoreDataProperties.swift */; };
+		3AAB3C092169B83B00D56DB4 /* MelodyPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAB3C082169B83B00D56DB4 /* MelodyPreviewViewController.swift */; };
+		3AAB3C0B2169BDEC00D56DB4 /* Spring_1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 3AAB3C0A2169B94B00D56DB4 /* Spring_1.mp4 */; };
 		3ACD525121650CE1004271C9 /* RecordTimer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3ACD525021650CE1004271C9 /* RecordTimer.xib */; };
 		3ACD525321650CF4004271C9 /* RecordTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACD525221650CF4004271C9 /* RecordTimerView.swift */; };
 		3AED3B7E216916550074BA44 /* MBDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AED3B7D216916550074BA44 /* MBDataManager.swift */; };
@@ -55,11 +55,11 @@
 		3A57CE662163181F00D8B864 /* BasicStructures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicStructures.swift; sourceTree = "<group>"; };
 		3A57CE6F2163987200D8B864 /* MBDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MBDataModel.xcdatamodel; sourceTree = "<group>"; };
 		3A57CE712163991F00D8B864 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		3A57CE7821639C3600D8B864 /* Spring_1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Spring_1.gif; sourceTree = "<group>"; };
-		3A57CE7A21639C3F00D8B864 /* Spring_2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Spring_2.gif; sourceTree = "<group>"; };
 		3A6DD7962168F4FB007AD599 /* PlaceholderGeneration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderGeneration.swift; sourceTree = "<group>"; };
 		3A6DD79C21690FA5007AD599 /* GeneratedMelody+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "GeneratedMelody+CoreDataClass.swift"; path = "/Users/licanchen/Desktop/Mind_Band/Mind_Band/Foundation/GeneratedMelody+CoreDataClass.swift"; sourceTree = "<absolute>"; };
 		3A6DD79D21690FA5007AD599 /* GeneratedMelody+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "GeneratedMelody+CoreDataProperties.swift"; path = "/Users/licanchen/Desktop/Mind_Band/Mind_Band/Foundation/GeneratedMelody+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
+		3AAB3C082169B83B00D56DB4 /* MelodyPreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelodyPreviewViewController.swift; sourceTree = "<group>"; };
+		3AAB3C0A2169B94B00D56DB4 /* Spring_1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Spring_1.mp4; sourceTree = "<group>"; };
 		3ACD525021650CE1004271C9 /* RecordTimer.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecordTimer.xib; sourceTree = "<group>"; };
 		3ACD525221650CF4004271C9 /* RecordTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordTimerView.swift; sourceTree = "<group>"; };
 		3AED3B7D216916550074BA44 /* MBDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBDataManager.swift; sourceTree = "<group>"; };
@@ -120,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				3A157F84216708E800CF4B0B /* PersonalViewController.swift */,
+				3AAB3C082169B83B00D56DB4 /* MelodyPreviewViewController.swift */,
 				3A157F7B2167052B00CF4B0B /* UserDetailTableViewCell.swift */,
 				3A157F7E216705CC00CF4B0B /* MelodyTableViewCell.swift */,
 			);
@@ -129,8 +130,7 @@
 		3A1A08B82163A299005F4251 /* VideoResources */ = {
 			isa = PBXGroup;
 			children = (
-				3A57CE7821639C3600D8B864 /* Spring_1.gif */,
-				3A57CE7A21639C3F00D8B864 /* Spring_2.gif */,
+				3AAB3C0A2169B94B00D56DB4 /* Spring_1.mp4 */,
 			);
 			path = VideoResources;
 			sourceTree = "<group>";
@@ -281,6 +281,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AAB3C0B2169BDEC00D56DB4 /* Spring_1.mp4 in Resources */,
 				3ACD525121650CE1004271C9 /* RecordTimer.xib in Resources */,
 				3A1A08BC2163B08A005F4251 /* Lotus.m4a in Resources */,
 				3AFE6A0B216264F300859AD3 /* LaunchScreen.storyboard in Resources */,
@@ -288,8 +289,6 @@
 				3AFE6A08216264F300859AD3 /* Assets.xcassets in Resources */,
 				3A57CE722163991F00D8B864 /* Default-568h@2x.png in Resources */,
 				3A1A08C421645568005F4251 /* ConditionEditView.xib in Resources */,
-				3A57CE7B21639C3F00D8B864 /* Spring_2.gif in Resources */,
-				3A57CE7921639C3600D8B864 /* Spring_1.gif in Resources */,
 				3AFE6A06216264F200859AD3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -341,6 +340,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A57CE702163987200D8B864 /* MBDataModel.xcdatamodeld in Sources */,
+				3AAB3C092169B83B00D56DB4 /* MelodyPreviewViewController.swift in Sources */,
 				3A1A08C221645550005F4251 /* ConditionEditView.swift in Sources */,
 				3AED3B7E216916550074BA44 /* MBDataManager.swift in Sources */,
 				3A57CE612163057300D8B864 /* MelodyGenerateViewController.swift in Sources */,

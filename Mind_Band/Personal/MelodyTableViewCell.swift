@@ -10,14 +10,45 @@ import UIKit
 
 class MelodyTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var backgroundImageView: UIImageView!
-    @IBOutlet weak var waveImageView: UIImageView!
-    @IBOutlet weak var melodyTitleLabel: UILabel!
-    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var backgroundImageView: UIImageView! {
+        didSet {
+            guard melody != nil else {return}
+            backgroundImageView.image = UIImage(named: melody!.titleImageName!)
+        }
+    }
+    @IBOutlet weak var melodyTitleLabel: UILabel! {
+        didSet {
+            guard melody != nil else {return}
+            melodyTitleLabel.text = melody?.melodyTitle
+        }
+    }
+    @IBOutlet weak var dateLabel: UILabel! {
+        didSet {
+            guard melody != nil else {return}
+            dateLabel.text = dateFormatter.string(from: melody!.date! as Date)
+        }
+    }
+    @IBOutlet weak var blurView: UIVisualEffectView! {
+        didSet {
+            blurView.layer.cornerRadius = 12
+            blurView.layer.masksToBounds = true
+        }
+    }
+    
+    private var dateFormatter: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMM. dd"
+        return dateFormatter
+    }()
     
     var melody: GeneratedMelody? {
         didSet {
-            
+            guard backgroundImageView != nil else {return}
+            backgroundImageView.image = UIImage(named: melody!.titleImageName!)
+            guard melodyTitleLabel != nil else {return}
+            melodyTitleLabel.text = melody?.melodyTitle
+            guard dateLabel != nil else {return}
+            dateLabel.text = dateFormatter.string(from: melody!.date! as Date)
         }
     }
     

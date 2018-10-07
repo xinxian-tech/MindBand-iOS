@@ -11,6 +11,7 @@ import UIKit
 class PersonalViewController: UIViewController {
     
     @IBOutlet weak var melodyTableView: UITableView!
+    @IBOutlet weak var backgroundImage: UIImageView!
     
     var melodies: [GeneratedMelody] = []
 
@@ -18,6 +19,12 @@ class PersonalViewController: UIViewController {
         super.viewDidLoad()
         melodyTableView.tableFooterView = UIView(frame: CGRect.zero)
         // melodyTableView.contentInset = UIEdgeInsets(top: -44,left: 0,bottom: 0,right: 0)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        melodies = MBDataManager.defaultManager.getAllMelodies()
+        melodyTableView.reloadData()
     }
 
 }
@@ -40,14 +47,20 @@ extension PersonalViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt
         indexPath: IndexPath) {
-        // Prepare the cell
+        if let cell = cell as? MelodyTableViewCell {
+            cell.melody = melodies[indexPath.row - 1]
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 0 {
             return 142
         } else {
-            return 92
+            return 112
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
     }
 }

@@ -39,4 +39,12 @@ class MBDataManager {
         }
     }
     
+    func getAllMelodies() -> [GeneratedMelody] {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "GeneratedMelody")
+        let fetchedMelodies = try! context.fetch(fetchRequest) as! [GeneratedMelody]
+        return fetchedMelodies
+    }
+    
 }
