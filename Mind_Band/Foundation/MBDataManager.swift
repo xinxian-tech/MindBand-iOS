@@ -47,4 +47,17 @@ class MBDataManager {
         return fetchedMelodies
     }
     
+    func saveDemoMelody() {
+//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//        let context = appDelegate.persistentContainer.viewContext
+//        for _ in 0 ..< 3 {
+//            let entity = NSEntityDescription.entity(forEntityName: "GeneratedMelody", in: context)
+//            let melody = GeneratedMelody(entity: entity!, insertInto: context)
+//            melody.date = Date() as NSDate
+//            melody.id = UUID()
+//            // Demo Resources
+//            try! context.save()
+//        }
+    }
+    
 }

@@ -14,10 +14,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions
         launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        if isFirstLaunch() {
+            MBDataManager.defaultManager.saveDemoMelody()
+        }
         return true
     }
     
@@ -62,6 +64,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
         }
+    }
+    
+    private func isFirstLaunch() -> Bool {
+        if  UserDefaults.standard.bool(forKey: "everLaunched") == false {
+            UserDefaults.standard.set(true, forKey: "everLaunched")
+            UserDefaults.standard.set(true, forKey: "firstLaunch")
+        } else {
+            UserDefaults.standard.set(false, forKey: "firstLaunch")
+        }
+        return UserDefaults.standard.bool(forKey: "firstLaunch")
     }
 
 

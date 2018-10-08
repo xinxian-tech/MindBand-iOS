@@ -69,7 +69,7 @@ class MelodyGenerateViewController: UIViewController {
     }
     
     private func loadVideoPlayer() {
-        videoPlayer = AVPlayer(url: Bundle.main.url(forResource: melody.defaultVideoName!, withExtension: "mp4")!)
+        videoPlayer = AVPlayer(url: Bundle.main.url(forResource: melody.defaultVideoName!, withExtension: "mov")!)
         let playerLayer = AVPlayerLayer(player: videoPlayer)
         playerLayer.frame = self.view.bounds
         playerView.layer.addSublayer(playerLayer)

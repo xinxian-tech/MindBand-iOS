@@ -18,13 +18,20 @@ class PersonalViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         melodyTableView.tableFooterView = UIView(frame: CGRect.zero)
-        // melodyTableView.contentInset = UIEdgeInsets(top: -44,left: 0,bottom: 0,right: 0)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         melodies = MBDataManager.defaultManager.getAllMelodies()
         melodyTableView.reloadData()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        if segue.identifier == "showMelodyDetail" {
+            let destination = segue.destination as! MelodyDetailViewController
+            destination.melody = sender as? GeneratedMelody
+        }
     }
 
 }
@@ -62,5 +69,8 @@ extension PersonalViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
+        if indexPath.row != 0 {
+            performSegue(withIdentifier: "showMelodyDetail", sender: melodies[indexPath.row - 1])
+        }
     }
 }
