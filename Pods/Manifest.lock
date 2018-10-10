@@ -1,16 +1,20 @@
 PODS:
+  - SVProgressHUD (2.2.5)
   - TapticEngine (1.2.0)
 
 DEPENDENCIES:
+  - SVProgressHUD
   - TapticEngine
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
+    - SVProgressHUD
     - TapticEngine
 
 SPEC CHECKSUMS:
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   TapticEngine: ed6f5b4a2e9aa46d4e8fa69a72a7a0b6719bf8ac
 
-PODFILE CHECKSUM: 9ecffa272ceaba3f7087acd91c87beb3641da4b4
+PODFILE CHECKSUM: 851f709b6629b49ba6a2aeaba8beb5fa828e741a
 
 COCOAPODS: 1.5.0

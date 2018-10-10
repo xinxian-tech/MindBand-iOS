@@ -61,7 +61,7 @@
                                 </constraints>
                                 <state key="normal" image="AddButton"/>
                                 <connections>
-                                    <segue destination="psg-S9-Sof" kind="presentation" identifier="showGenerateViewController" id="10a-Jc-HBc"/>
+                                    <action selector="addButtonTapped:" destination="fFY-Bk-VCI" eventType="touchUpInside" id="dOs-By-f4r"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wMk-Qe-fIL">
@@ -95,6 +95,7 @@ Make your every day MEMO.</string>
                     <tabBarItem key="tabBarItem" title="Mind" image="MindBarIcon" id="mFE-eo-YuE"/>
                     <connections>
                         <outlet property="scnView" destination="KDp-jb-pHm" id="D3D-iH-E1h"/>
+                        <segue destination="psg-S9-Sof" kind="presentation" identifier="showCreateNShare" id="9lj-xX-XkX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Rc-QK-nBD" userLabel="First Responder" sceneMemberID="firstResponder"/>

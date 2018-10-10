@@ -73,4 +73,24 @@ extension PersonalViewController: UITableViewDataSource, UITableViewDelegate {
             performSegue(withIdentifier: "showMelodyDetail", sender: melodies[indexPath.row - 1])
         }
     }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        if indexPath.row == 0 {
+            return false
+        } else {
+            return true
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt
+        indexPath: IndexPath) -> String? {
+        return "Remove"
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt
+        indexPath: IndexPath) {
+        MBDataManager.defaultManager.removeMelody(id: melodies[indexPath.row - 1].id!)
+        melodies.remove(at: indexPath.row - 1)
+        tableView.deleteRows(at: [indexPath], with: .automatic)
+    }
 }

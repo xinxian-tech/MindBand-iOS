@@ -9,6 +9,7 @@
 import UIKit
 import AVFoundation
 import AVKit
+import SVProgressHUD
 
 class MelodyShareViewController: UIViewController {
 
@@ -61,6 +62,14 @@ class MelodyShareViewController: UIViewController {
         let cancelAction = UIAlertAction(title: "Done", style: .cancel, handler: nil)
         alertController.addAction(cancelAction)
         present(alertController, animated: true, completion: nil)
+    }
+    
+    @IBAction func publishButtonTapped(_ sender: UIButton) {
+        SVProgressHUD.showSuccess(withStatus: "Published!")
+        delay(for: 2) {
+            self.doneButtonTapped(sender)
+            SVProgressHUD.dismiss()
+        }
     }
     
     @IBAction func doneButtonTapped(_ sender: UIButton) {

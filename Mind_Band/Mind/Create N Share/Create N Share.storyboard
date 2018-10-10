@@ -249,7 +249,7 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <inset key="titleEdgeInsets" minX="0.0" minY="8" maxX="0.0" maxY="8"/>
                                 <inset key="imageEdgeInsets" minX="16" minY="8" maxX="95" maxY="8"/>
-                                <state key="normal" title="Share" image="SaveButton">
+                                <state key="normal" title="Save" image="SaveButton">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -269,6 +269,9 @@
                                 <state key="normal" title="Publish" image="PublishButton">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="publishButtonTapped:" destination="sXq-4M-7NY" eventType="touchUpInside" id="31x-DO-Zca"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ss-DM-RMe">
                                 <rect key="frame" x="321" y="49" width="38" height="30"/>
@@ -288,7 +291,7 @@
                                 <rect key="frame" x="38.333333333333343" y="91" width="298.33333333333326" height="398"/>
                                 <subviews>
                                     <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PHq-EB-Lok">
-                                        <rect key="frame" x="88.999999999999915" y="367" width="121" height="40"/>
+                                        <rect key="frame" x="89" y="367" width="121" height="40"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="l5L-Kk-SQn">
                                             <rect key="frame" x="0.0" y="0.0" width="121" height="40"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

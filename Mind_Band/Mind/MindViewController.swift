@@ -9,6 +9,7 @@
 import UIKit
 import SceneKit
 import TapticEngine
+import SVProgressHUD
 
 class MindViewController: UIViewController {
     
@@ -16,6 +17,15 @@ class MindViewController: UIViewController {
     
     private var floatingWindowLockFrame: CGRect = CGRect(x: 23, y: 90, width: 329, height: 597)
     private var floatingWindowView: ConditionEditView?
+    
+    private var currentImage: UIImage? {
+        didSet {
+            if floatingWindowView != nil {
+                floatingWindowView?.cancelButtonText = "Edit"
+                floatingWindowView?.confirmButtonText = "Save"
+            }
+        }
+    }
     
     private var inactiveTextMaterial: SCNMaterial = {
         let material = SCNMaterial()
@@ -45,6 +55,15 @@ class MindViewController: UIViewController {
         }
     }
     
+    @IBAction func addButtonTapped(_ sender: UIButton) {
+        SVProgressHUD.setDefaultStyle(.dark)
+        SVProgressHUD.show(withStatus: "Generating ...")
+        delay(for: 2) {
+            SVProgressHUD.dismiss()
+            self.performSegue(withIdentifier: "showCreateNShare", sender: nil)
+        }
+    }
+    
     private var selectedConditions: [ConditionalElement] = []
     private var planetConditionMap: [PlanetEnum:ConditionalElement] = [
         .neptune : .location,
@@ -58,6 +77,7 @@ class MindViewController: UIViewController {
         prepareFloatingWindow()
         floatingWindowView?.conditionalElement = .image
         floatingWindowView?.keyImageName = "ImageCondition"
+        floatingWindowView?.keyImageView.image = currentImage
         floatingWindowView?.confirmButtonText = "Camera"
         floatingWindowView?.cancelButtonText = "Album"
         floatingWindowView?.titleLabel.text = "Add a Picture"
@@ -70,6 +90,7 @@ class MindViewController: UIViewController {
         floatingWindowView?.conditionalElement = .weather
         floatingWindowView?.keyImageName = "WorkoutCondition"
         floatingWindowView?.titleLabel.text = "Add a Weather"
+        floatingWindowView?.confirmButtonText = "Save"
         floatingWindowView?.descriptionLabel.text = "Turn the weather into a part of melody."
         animateFloatingWindowIn()
     }
@@ -78,6 +99,7 @@ class MindViewController: UIViewController {
         prepareFloatingWindow()
         floatingWindowView?.keyImageName = "LocationCondition"
         floatingWindowView?.confirmButtonText = "Confirm"
+        floatingWindowView?.conditionalElement = .location
         floatingWindowView?.cancelButtonText = "Edit"
         floatingWindowView?.titleLabel.text = "Add a Location"
         floatingWindowView?.descriptionLabel.text = "Listen to the melody of the certain location."
@@ -100,6 +122,7 @@ class MindViewController: UIViewController {
         floatingWindowView?.conditionalElement = .health
         floatingWindowView?.keyImageName = "WorkoutCondition"
         floatingWindowView?.titleLabel.text = "Add Workout Info"
+        floatingWindowView?.confirmButtonText = "Save"
         floatingWindowView?.descriptionLabel.text = "The melody would tell what you're feeling right now."
         animateFloatingWindowIn()
     }
@@ -273,6 +296,12 @@ class MindViewController: UIViewController {
         }, completion: nil)
     }
     
+    private func removeFloatingWindow() {
+        animateFloatingWindowOut() {
+            self.floatingWindowView?.removeFromSuperview()
+        }
+    }
+    
     private func switchPlanetSelectStatus(planet: PlanetEnum, childNodeIndex: Int = 0) {
         TapticEngine.impact.feedback(.heavy)
         if selectedConditions.contains(planetConditionMap[planet]!) {
@@ -305,19 +334,22 @@ class MindViewController: UIViewController {
 
 extension MindViewController: ConditionEditDelegate {
     func closeButtonDidTapped() {
-        animateFloatingWindowOut() {
-            self.floatingWindowView?.removeFromSuperview()
-        }
+        currentImage = nil
+        removeFloatingWindow()
     }
     
     func confirmButtonDidTapped() {
         guard floatingWindowView != nil else {return}
         switch floatingWindowView!.conditionalElement {
         case .image:
-            let imagePickerController = UIImagePickerController()
-            imagePickerController.sourceType = .camera
-            imagePickerController.delegate = self
-            present(imagePickerController, animated: true, completion: nil)
+            if currentImage == nil {
+                let imagePickerController = UIImagePickerController()
+                imagePickerController.sourceType = .camera
+                imagePickerController.delegate = self
+                present(imagePickerController, animated: true, completion: nil)
+            } else {
+                animateFloatingWindowOut(completion: nil)
+            }
         case .vocal:
             switch floatingWindowView!.controlState {
             case .ready:
@@ -329,7 +361,7 @@ extension MindViewController: ConditionEditDelegate {
                 floatingWindowView?.confirmButton.setTitle("Save", for: .normal)
                 floatingWindowView?.controlState = .done
             case .done:
-                closeButtonDidTapped()
+                removeFloatingWindow()
             }
         default:
             break
@@ -340,12 +372,30 @@ extension MindViewController: ConditionEditDelegate {
         guard floatingWindowView != nil else {return}
         switch floatingWindowView!.conditionalElement {
         case .image:
-            let imagePickerController = UIImagePickerController()
-            imagePickerController.sourceType = .photoLibrary
-            imagePickerController.delegate = self
-            present(imagePickerController, animated: true, completion: nil)
+            if currentImage == nil {
+                let imagePickerController = UIImagePickerController()
+                imagePickerController.sourceType = .photoLibrary
+                imagePickerController.delegate = self
+                present(imagePickerController, animated: true, completion: nil)
+            } else {
+                let imagePickerController = UIImagePickerController()
+                imagePickerController.delegate = self
+                let alertController = UIAlertController(title: "Choose the photo source", message: nil, preferredStyle: .actionSheet)
+                let photoLibraryAction = UIAlertAction(title: "Photo Library", style: .default) { action in
+                    imagePickerController.sourceType = .photoLibrary
+                    self.present(imagePickerController, animated: true, completion: nil)
+                }
+                let cameraAction = UIAlertAction(title: "Camera", style: .default) { action in
+                    imagePickerController.sourceType = .camera
+                    self.present(imagePickerController, animated: true, completion: nil)
+                }
+                alertController.addAction(photoLibraryAction)
+                alertController.addAction(cameraAction)
+                alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+                present(alertController, animated: true, completion: nil)
+            }
         default:
-            closeButtonDidTapped()
+            removeFloatingWindow()
         }
     }
 }
@@ -360,6 +410,7 @@ extension MindViewController: UIImagePickerControllerDelegate, UINavigationContr
         info: [UIImagePickerController.InfoKey : Any]) {
         let selectedImage = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
         floatingWindowView?.keyImageView.image = selectedImage
+        currentImage = selectedImage
         dismiss(animated: true, completion: nil)
     }
 }
