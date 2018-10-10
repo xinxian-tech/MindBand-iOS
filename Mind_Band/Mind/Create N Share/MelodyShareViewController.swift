@@ -15,6 +15,15 @@ class MelodyShareViewController: UIViewController {
 
     @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var publishButton: UIButton!
+    @IBOutlet weak var playButton: UIButton!
+    
+    @IBOutlet weak var videoContainerView: UIView!
+    @IBOutlet weak var playButtonBlurView: UIVisualEffectView! {
+        didSet {
+            playButtonBlurView.layer.cornerRadius = 15
+            playButtonBlurView.layer.masksToBounds = true
+        }
+    }
     
     var melody: GeneratedMelody!
     var shouldSaveMelody: Bool {
@@ -24,16 +33,21 @@ class MelodyShareViewController: UIViewController {
             (self.navigationController?.viewControllers[0] as! MelodyGenerateViewController).shouldSaveMelody = newValue
         }
     }
-    @IBOutlet weak var videoContainerView: UIView!
-    @IBOutlet weak var playButtonBlurView: UIVisualEffectView! {
-        didSet {
-            playButtonBlurView.layer.cornerRadius = 15
-            playButtonBlurView.layer.masksToBounds = true
-        }
-    }
+
     
     private var videoPlayer: AVPlayer!
     private var audioPlayer: AVPlayer!
+    
+    private var didFinishedPlay: Bool = true
+    private var isPlaying: Bool = false {
+        didSet {
+            if isPlaying {
+                playButton.setTitle("Pause", for: .normal)
+            } else {
+                playButton.setTitle("Play", for: .normal)
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,10 +62,15 @@ class MelodyShareViewController: UIViewController {
     }
     
     @IBAction func playButtonTapped(_ sender: UIButton) {
-        playVideo()
-        playAudio()
-        UIView.animate(withDuration: 0.2) {
-            self.playButtonBlurView.alpha = 0
+        if isPlaying {
+            pausePlaying()
+        } else {
+            if didFinishedPlay {
+                replayAudio()
+                replayVideo()
+            } else {
+                resumePlay()
+            }
         }
     }
     
@@ -85,38 +104,46 @@ class MelodyShareViewController: UIViewController {
         playerLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
         playerLayer.frame = CGRect(x: 20, y: 0, width: 300, height: 400)
         videoContainerView.layer.addSublayer(playerLayer)
-        NotificationCenter.default.addObserver(self, selector: #selector(playVideo),
+        NotificationCenter.default.addObserver(self, selector: #selector(replayVideo),
                                                name: NSNotification.Name.AVPlayerItemDidPlayToEndTime,
                                                object: videoPlayer?.currentItem)
     }
     
     private func setupAudioPlayer() {
         audioPlayer = AVPlayer(url: Bundle.main.url(forResource: melody.defaultSongName, withExtension: "m4a")!)
-        NotificationCenter.default.addObserver(self, selector: #selector(pauseMedia),
+        NotificationCenter.default.addObserver(self, selector: #selector(finishedPlaying),
                                                name: NSNotification.Name.AVPlayerItemDidPlayToEndTime,
                                                object: audioPlayer?.currentItem)
     }
     
-    @objc private func playVideo() {
+    @objc private func replayVideo() {
+        isPlaying = true
         videoPlayer.seek(to: CMTime.zero)
         videoPlayer.play()
     }
     
-    private func playAudio() {
+    private func replayAudio() {
+        isPlaying = true
+        didFinishedPlay = false
         audioPlayer.seek(to: CMTime.zero)
         audioPlayer.play()
     }
     
-    @objc private func enablePlayButton() {
-        UIView.animate(withDuration: 0.2) {
-            self.playButtonBlurView.alpha = 1
-        }
-    }
-    
-    @objc private func pauseMedia() {
+    private func pausePlaying() {
+        isPlaying = false
         videoPlayer.pause()
         audioPlayer.pause()
-        enablePlayButton()
+    }
+    
+    @objc private func finishedPlaying() {
+        pausePlaying()
+        didFinishedPlay = true
+    }
+    
+    private func resumePlay() {
+        isPlaying = true
+        videoPlayer.play()
+        audioPlayer.play()
     }
     
 }

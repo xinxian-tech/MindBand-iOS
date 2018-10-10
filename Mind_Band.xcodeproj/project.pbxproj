@@ -16,6 +16,12 @@
 		3A1A08C02164516E005F4251 /* MindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1A08BF2164516E005F4251 /* MindViewController.swift */; };
 		3A1A08C221645550005F4251 /* ConditionEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1A08C121645550005F4251 /* ConditionEditView.swift */; };
 		3A1A08C421645568005F4251 /* ConditionEditView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A1A08C321645568005F4251 /* ConditionEditView.xib */; };
+		3A5560CB216E835B00FB50F6 /* Lotus_Dual.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 3A5560C7216E82FB00FB50F6 /* Lotus_Dual.m4a */; };
+		3A5560CC216E835B00FB50F6 /* Lotus_Quartet_1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 3A5560C9216E82FB00FB50F6 /* Lotus_Quartet_1.m4a */; };
+		3A5560CD216E835B00FB50F6 /* Lotus_Quartet_2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 3A5560C6216E82FB00FB50F6 /* Lotus_Quartet_2.m4a */; };
+		3A5560CE216E835B00FB50F6 /* Lotus_Single.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 3A5560CA216E82FB00FB50F6 /* Lotus_Single.m4a */; };
+		3A5560CF216E835B00FB50F6 /* Lotus_Triple.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 3A5560C8216E82FB00FB50F6 /* Lotus_Triple.m4a */; };
+		3A5560D3216E8D3500FB50F6 /* Galaxy.mov in Resources */ = {isa = PBXBuildFile; fileRef = 3A5560D2216E8D3500FB50F6 /* Galaxy.mov */; };
 		3A57CE5F216302DE00D8B864 /* Create N Share.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A57CE5E216302DE00D8B864 /* Create N Share.storyboard */; };
 		3A57CE612163057300D8B864 /* MelodyGenerateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A57CE602163057300D8B864 /* MelodyGenerateViewController.swift */; };
 		3A57CE632163066D00D8B864 /* MelodyShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A57CE622163066D00D8B864 /* MelodyShareViewController.swift */; };
@@ -48,6 +54,12 @@
 		3A1A08BF2164516E005F4251 /* MindViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MindViewController.swift; sourceTree = "<group>"; };
 		3A1A08C121645550005F4251 /* ConditionEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionEditView.swift; sourceTree = "<group>"; };
 		3A1A08C321645568005F4251 /* ConditionEditView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConditionEditView.xib; sourceTree = "<group>"; };
+		3A5560C6216E82FB00FB50F6 /* Lotus_Quartet_2.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Lotus_Quartet_2.m4a; sourceTree = "<group>"; };
+		3A5560C7216E82FB00FB50F6 /* Lotus_Dual.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Lotus_Dual.m4a; sourceTree = "<group>"; };
+		3A5560C8216E82FB00FB50F6 /* Lotus_Triple.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Lotus_Triple.m4a; sourceTree = "<group>"; };
+		3A5560C9216E82FB00FB50F6 /* Lotus_Quartet_1.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Lotus_Quartet_1.m4a; sourceTree = "<group>"; };
+		3A5560CA216E82FB00FB50F6 /* Lotus_Single.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Lotus_Single.m4a; sourceTree = "<group>"; };
+		3A5560D2216E8D3500FB50F6 /* Galaxy.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = Galaxy.mov; sourceTree = "<group>"; };
 		3A57CE5E216302DE00D8B864 /* Create N Share.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Create N Share.storyboard"; sourceTree = "<group>"; };
 		3A57CE602163057300D8B864 /* MelodyGenerateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelodyGenerateViewController.swift; sourceTree = "<group>"; };
 		3A57CE622163066D00D8B864 /* MelodyShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelodyShareViewController.swift; sourceTree = "<group>"; };
@@ -131,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				3A7F1677216B6DDE0074055C /* Spring_1.mov */,
+				3A5560D2216E8D3500FB50F6 /* Galaxy.mov */,
 			);
 			path = VideoResources;
 			sourceTree = "<group>";
@@ -139,6 +152,11 @@
 			isa = PBXGroup;
 			children = (
 				3A1A08BB2163B06C005F4251 /* Lotus.m4a */,
+				3A5560C7216E82FB00FB50F6 /* Lotus_Dual.m4a */,
+				3A5560C9216E82FB00FB50F6 /* Lotus_Quartet_1.m4a */,
+				3A5560C6216E82FB00FB50F6 /* Lotus_Quartet_2.m4a */,
+				3A5560CA216E82FB00FB50F6 /* Lotus_Single.m4a */,
+				3A5560C8216E82FB00FB50F6 /* Lotus_Triple.m4a */,
 			);
 			path = AudioResources;
 			sourceTree = "<group>";
@@ -281,12 +299,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A5560CB216E835B00FB50F6 /* Lotus_Dual.m4a in Resources */,
+				3A5560CC216E835B00FB50F6 /* Lotus_Quartet_1.m4a in Resources */,
+				3A5560CD216E835B00FB50F6 /* Lotus_Quartet_2.m4a in Resources */,
+				3A5560CE216E835B00FB50F6 /* Lotus_Single.m4a in Resources */,
+				3A5560CF216E835B00FB50F6 /* Lotus_Triple.m4a in Resources */,
 				3ACD525121650CE1004271C9 /* RecordTimer.xib in Resources */,
 				3A1A08BC2163B08A005F4251 /* Lotus.m4a in Resources */,
 				3AFE6A0B216264F300859AD3 /* LaunchScreen.storyboard in Resources */,
 				3A57CE5F216302DE00D8B864 /* Create N Share.storyboard in Resources */,
 				3AFE6A08216264F300859AD3 /* Assets.xcassets in Resources */,
 				3A57CE722163991F00D8B864 /* Default-568h@2x.png in Resources */,
+				3A5560D3216E8D3500FB50F6 /* Galaxy.mov in Resources */,
 				3A1A08C421645568005F4251 /* ConditionEditView.xib in Resources */,
 				3A7F1678216B6DDE0074055C /* Spring_1.mov in Resources */,
 				3AFE6A06216264F200859AD3 /* Main.storyboard in Resources */,
@@ -509,7 +533,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4C47ZVS5JD;
 				INFOPLIST_FILE = Mind_Band/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Frost.Mind-Band";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -525,7 +552,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4C47ZVS5JD;
 				INFOPLIST_FILE = Mind_Band/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Frost.Mind-Band";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;

@@ -274,13 +274,13 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ss-DM-RMe">
-                                <rect key="frame" x="321" y="49" width="38" height="30"/>
+                                <rect key="frame" x="294" y="49" width="65" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="EM3-Ml-4MU"/>
-                                    <constraint firstAttribute="width" constant="38" id="h8u-Z1-jx5"/>
+                                    <constraint firstAttribute="width" constant="65" id="h8u-Z1-jx5"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                                <state key="normal" title="Done">
+                                <state key="normal" title="Dismiss">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -360,6 +360,7 @@
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="playButton" destination="JNh-fd-Vp8" id="DDh-ny-73h"/>
                         <outlet property="playButtonBlurView" destination="PHq-EB-Lok" id="jmE-zz-etf"/>
                         <outlet property="publishButton" destination="nrS-6C-Qwe" id="Vhw-fA-KZe"/>
                         <outlet property="shareButton" destination="Gec-sa-SPn" id="LW0-ka-LIe"/>

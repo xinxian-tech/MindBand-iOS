@@ -22,7 +22,7 @@ class MelodyGenerateViewController: UIViewController {
     var audioPlayer: AVPlayer?
     var videoPlayer: AVPlayer?
     
-    let melody: GeneratedMelody = {
+    var melody: GeneratedMelody! = {
         let melody = MBDataManager.defaultManager.getAndSaveRandomGeneratedMelody()
         return melody
     }()
@@ -31,9 +31,11 @@ class MelodyGenerateViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         titleLabel.text = melody.melodyTitle
+        updateMelodyWithCondition()
         setupGradientView()
         loadMelodyAudio()
         loadVideoPlayer()
+        updateMelodyWithCondition()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -64,6 +66,7 @@ class MelodyGenerateViewController: UIViewController {
     }
     
     private func loadMelodyAudio() {
+        print(melody.defaultSongName)
         audioPlayer = AVPlayer(url: Bundle.main.url(forResource: melody.defaultSongName, withExtension: "m4a")!)
         audioPlayer?.play()
     }
@@ -77,6 +80,28 @@ class MelodyGenerateViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(replayVideo),
                                                name: NSNotification.Name.AVPlayerItemDidPlayToEndTime,
                                                object: videoPlayer?.currentItem)
+    }
+    
+    private func updateMelodyWithCondition() {
+        switch conditionalElements.count {
+        case 0:
+            melody.defaultVideoName = "Galaxy"
+        case 1:
+            melody.defaultSongName = "Lotus_Single"
+        case 2:
+            melody.defaultSongName = "Lotus_Dual"
+        case 3:
+            melody.defaultSongName = "Lotus_Triple"
+        case 4:
+            if conditionalElements.contains(.health) {
+                melody.defaultSongName = "Lotus_Quartet_2"
+            } else {
+                melody.defaultSongName = "Lotus_Quartet_1"
+            }
+        default:
+            return
+        }
+        MBDataManager.defaultManager.updateMelody(melody: melody)
     }
     
     @objc private func replayVideo() {

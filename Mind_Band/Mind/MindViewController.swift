@@ -46,7 +46,7 @@ class MindViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
-        case "showGenerateViewController":
+        case "showCreateNShare":
             let destination = (segue.destination as! UINavigationController)
                 .viewControllers.first! as! MelodyGenerateViewController
             destination.conditionalElements = selectedConditions

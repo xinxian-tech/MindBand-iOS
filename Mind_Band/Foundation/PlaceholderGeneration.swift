@@ -20,7 +20,12 @@ class DemoEngine {
     ]
     
     private let melodyNames: [String] = [
-        "Lotus"
+        "Lotus",
+        "Lotus_Dual",
+        "Lotus_Quartet_1",
+        "Lotus_Quartet_2",
+        "Lotus_Single",
+        "Lotus_Triple"
     ]
     
     private let melodyTitles: [String] = [

@@ -39,6 +39,21 @@ class MBDataManager {
         }
     }
     
+    func updateMelody(melody: GeneratedMelody) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "GeneratedMelody")
+        fetchRequest.predicate = NSPredicate(format: "id=\"\(melody.id!)\"")
+        if let fetchedResults = try! context.fetch(fetchRequest) as? [GeneratedMelody] {
+            fetchedResults.first?.date = melody.date
+            fetchedResults.first?.defaultSongName = melody.defaultSongName
+            fetchedResults.first?.defaultVideoName = melody.defaultVideoName
+            fetchedResults.first?.melodyTitle = melody.melodyTitle
+            fetchedResults.first?.titleImageName = melody.titleImageName
+            try! context.save()
+        }
+    }
+    
     func getAllMelodies() -> [GeneratedMelody] {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
