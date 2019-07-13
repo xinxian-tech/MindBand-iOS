@@ -13,9 +13,9 @@ class UserDetailTableViewCell: UITableViewCell {
     @IBOutlet weak var userPortraitImageView: UIImageView! {
         didSet {
             userPortraitImageView.layer.cornerRadius = userPortraitImageView.frame.width / 2
+            userPortraitImageView.layer.masksToBounds = true
         }
     }
     @IBOutlet weak var userNameLabel: UILabel!
-    @IBOutlet weak var backgroundImageVIew: UIImageView!
     
 }

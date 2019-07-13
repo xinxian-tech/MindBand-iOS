@@ -38,6 +38,12 @@ class MindViewController: UIViewController {
         material.diffuse.contents = UIColor(red: 1, green: 72/255, blue: 133/255, alpha: 1)
         return material
     }()
+    
+    private var jupiterTextNode: SCNNode!
+    private var neptuneTextNode: SCNNode!
+    private var venusTextNode: SCNNode!
+    private var saturnTextNode: SCNNode!
+    private var marsTextNode: SCNNode!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -132,62 +138,62 @@ class MindViewController: UIViewController {
         
         // Neptune Setup
         let neptuneNode = PlanetNode(planet: .neptune)
-        neptuneNode.position = SCNVector3(0.2, 0.7, -0.3)
-        neptuneNode.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x: 0, y: 2, z: 0, duration: 30)))
+        neptuneNode.position = SCNVector3(0.35, 0.7, 0)
+        neptuneNode.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x: 0, y: 2, z: 0, duration: 20)))
         let locationText = SCNText(string: "Location", extrusionDepth: 0.02)
         locationText.firstMaterial = inactiveTextMaterial
-        let neptuneTextNode = SCNNode(geometry: locationText)
+        neptuneTextNode = SCNNode(geometry: locationText)
         neptuneTextNode.scale = SCNVector3(0.005, 0.005, 0.005)
-        neptuneTextNode.position = SCNVector3(-0.11, -0.25, 0)
-        neptuneNode.addChildNode(neptuneTextNode)
+        neptuneTextNode.position = SCNVector3(-0.11, -0.25, 0) + neptuneNode.position
+        scene.rootNode.addChildNode(neptuneTextNode)
         scene.rootNode.addChildNode(neptuneNode)
         
         // Venus Setup
         let venusNode = PlanetNode(planet: .venus)
-        venusNode.position = SCNVector3(0.3, 0.2, -0.1)
-        venusNode.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x: 0, y: 2, z: 0, duration: 40)))
+        venusNode.position = SCNVector3(-0.35, -0.1, 0)
+        venusNode.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x: 0, y: 2, z: 0, duration: 20)))
         let workoutText = SCNText(string: "Workout", extrusionDepth: 0.02)
         workoutText.firstMaterial = inactiveTextMaterial
-        let venusTextNode = SCNNode(geometry: workoutText)
+        venusTextNode = SCNNode(geometry: workoutText)
         venusTextNode.scale = SCNVector3(0.005, 0.005, 0.005)
-        venusTextNode.position = SCNVector3(-0.11, -0.20, 0)
-        venusNode.addChildNode(venusTextNode)
+        venusTextNode.position = SCNVector3(-0.11, -0.20, 0) + venusNode.position
+        scene.rootNode.addChildNode(venusTextNode)
         scene.rootNode.addChildNode(venusNode)
         
         // Saturn Setup
         let saturnNode = PlanetNode(planet: .saturn)
-        saturnNode.position = SCNVector3(-0.2, 0, 0)
-        saturnNode.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x: 0, y: 2, z: 0, duration: 35)))
+        saturnNode.position = SCNVector3(0, 0.22, 0)
+        saturnNode.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x: 0, y: 2, z: 0, duration: 20)))
         let imageText = SCNText(string: "Image", extrusionDepth: 0.02)
         imageText.firstMaterial = inactiveTextMaterial
-        let saturnTextNode = SCNNode(geometry: imageText)
+        saturnTextNode = SCNNode(geometry: imageText)
         saturnTextNode.scale = SCNVector3(0.005, 0.005, 0.005)
-        saturnTextNode.position = SCNVector3(-0.07, -0.25, 0)
-        saturnNode.addChildNode(saturnTextNode)
+        saturnTextNode.position = SCNVector3(-0.07, -0.25, 0) + saturnNode.position
+        scene.rootNode.addChildNode(saturnTextNode)
         scene.rootNode.addChildNode(saturnNode)
         
         // Mars Setup
         let marsNode = PlanetNode(planet: .mars)
-        marsNode.position = SCNVector3(-0.4, 0.5, 0.1)
-        marsNode.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x: 0, y: 2, z: 0, duration: 52)))
+        marsNode.position = SCNVector3(-0.4, 0.7, 0)
+        marsNode.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x: 0, y: 2, z: 0, duration: 20)))
         let hummingText = SCNText(string: "Humming", extrusionDepth: 0.02)
         hummingText.firstMaterial = inactiveTextMaterial
-        let marsTextNode = SCNNode(geometry: hummingText)
+        marsTextNode = SCNNode(geometry: hummingText)
         marsTextNode.scale = SCNVector3(0.005, 0.005, 0.005)
-        marsTextNode.position = SCNVector3(-0.12, -0.18, 0)
-        marsNode.addChildNode(marsTextNode)
+        marsTextNode.position = SCNVector3(-0.12, -0.18, 0) + marsNode.position
+        scene.rootNode.addChildNode(marsTextNode)
         scene.rootNode.addChildNode(marsNode)
         
         // Jupiter
         let jupiterNode = PlanetNode(planet: .jupiter)
-        jupiterNode.position = SCNVector3(0.4, -0.3, -0.15)
-        jupiterNode.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x: 0, y: 2, z: 0, duration: 84)))
+        jupiterNode.position = SCNVector3(0.4, -0.2, 0)
+        jupiterNode.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x: 0, y: 2, z: 0, duration: 20)))
         let weatherText = SCNText(string: "Weather", extrusionDepth: 0.02)
         weatherText.firstMaterial = inactiveTextMaterial
-        let jupiterTextNode = SCNNode(geometry: weatherText)
+        jupiterTextNode = SCNNode(geometry: weatherText)
         jupiterTextNode.scale = SCNVector3(0.005, 0.005, 0.005)
-        jupiterTextNode.position = SCNVector3(-0.11, -0.25, 0)
-        jupiterNode.addChildNode(jupiterTextNode)
+        jupiterTextNode.position = SCNVector3(-0.11, -0.25, 0) + jupiterNode.position
+        scene.rootNode.addChildNode(jupiterTextNode)
         scene.rootNode.addChildNode(jupiterNode)
         
         // Camera Setup
@@ -312,21 +318,39 @@ class MindViewController: UIViewController {
     }
     
     private func setPlanetSelected(planet: PlanetEnum, childNodeIndex: Int = 0) {
-        for node in scnView.scene!.rootNode.childNodes {
-            if node is PlanetNode && (node as! PlanetNode).planetType == planet {
-                node.childNodes[childNodeIndex].geometry?.firstMaterial = activeTextMaterial
-                selectedConditions.append(planetConditionMap[planet]!)
-            }
+        switch planet {
+        case .saturn:
+            saturnTextNode.geometry?.firstMaterial = activeTextMaterial
+        case .jupiter:
+            jupiterTextNode.geometry?.firstMaterial = activeTextMaterial
+        case .mars:
+            marsTextNode.geometry?.firstMaterial = activeTextMaterial
+        case .neptune:
+            neptuneTextNode.geometry?.firstMaterial = activeTextMaterial
+        case .venus:
+            venusTextNode.geometry?.firstMaterial = activeTextMaterial
+        default:
+            return
         }
+        selectedConditions.append(planetConditionMap[planet]!)
     }
     
     private func setPlanetDeselected(planet: PlanetEnum, childNodeIndex: Int = 0) {
-        for node in scnView.scene!.rootNode.childNodes {
-            if node is PlanetNode && (node as! PlanetNode).planetType == planet {
-                node.childNodes[childNodeIndex].geometry?.firstMaterial = inactiveTextMaterial
-                selectedConditions = selectedConditions.filter({$0 != planetConditionMap[planet]!})
-            }
+        switch planet {
+        case .saturn:
+            saturnTextNode.geometry?.firstMaterial = inactiveTextMaterial
+        case .jupiter:
+            jupiterTextNode.geometry?.firstMaterial = inactiveTextMaterial
+        case .mars:
+            marsTextNode.geometry?.firstMaterial = inactiveTextMaterial
+        case .neptune:
+            neptuneTextNode.geometry?.firstMaterial = inactiveTextMaterial
+        case .venus:
+            venusTextNode.geometry?.firstMaterial = inactiveTextMaterial
+        default:
+            return
         }
+        selectedConditions = selectedConditions.filter({$0 != planetConditionMap[planet]!})
     }
     
 }

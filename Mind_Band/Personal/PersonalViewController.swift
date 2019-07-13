@@ -14,7 +14,7 @@ class PersonalViewController: UIViewController {
     @IBOutlet weak var backgroundImage: UIImageView!
     
     var melodies: [GeneratedMelody] = []
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         melodyTableView.tableFooterView = UIView(frame: CGRect.zero)

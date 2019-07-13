@@ -19,13 +19,11 @@ class DemoEngine {
         "MelodyTitle_4"
     ]
     
-    private let melodyNames: [String] = [
-        "Lotus",
-        "Lotus_Dual",
-        "Lotus_Quartet_1",
-        "Lotus_Quartet_2",
-        "Lotus_Single",
-        "Lotus_Triple"
+    let melodyNames: [String] = [
+        "doughnut",
+        "moonlight",
+        "fun",
+        "turning"
     ]
     
     private let melodyTitles: [String] = [

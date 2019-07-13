@@ -33,7 +33,7 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TV4-YT-2dV">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UserPortrait" translatesAutoresizingMaskIntoConstraints="NO" id="TV4-YT-2dV">
                                         <rect key="frame" x="8" y="139" width="40" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="Z5n-EJ-zrN"/>
@@ -171,6 +171,7 @@
                         <outlet property="playerView" destination="3o6-D0-Qun" id="VM2-Vz-SFi"/>
                         <outlet property="titleLabel" destination="boe-xF-k8P" id="bpP-a4-isw"/>
                         <outlet property="topGradientView" destination="deO-xa-KAE" id="zGx-4c-PU3"/>
+                        <outlet property="userPortraitImageView" destination="TV4-YT-2dV" id="b0z-h4-r9p"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aTN-hg-q9Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -396,5 +397,6 @@
         <image name="PublishButton" width="138" height="138"/>
         <image name="SaveButton" width="138" height="138"/>
         <image name="ShareButton" width="140" height="140"/>
+        <image name="UserPortrait" width="959" height="959"/>
     </resources>
 </document>

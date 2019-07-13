@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SceneKit
 
 func delay(for seconds: Double, block: @escaping ()->()) {
     DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + seconds, execute: block)
@@ -60,3 +61,7 @@ extension Int {
     }
 }
 
+
+func + (left: SCNVector3, right: SCNVector3) -> SCNVector3 {
+    return SCNVector3(left.x + right.x, left.y + right.y, left.z + right.z)
+}

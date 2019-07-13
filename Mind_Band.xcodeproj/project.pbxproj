@@ -22,6 +22,10 @@
 		3A5560CE216E835B00FB50F6 /* Lotus_Single.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 3A5560CA216E82FB00FB50F6 /* Lotus_Single.m4a */; };
 		3A5560CF216E835B00FB50F6 /* Lotus_Triple.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 3A5560C8216E82FB00FB50F6 /* Lotus_Triple.m4a */; };
 		3A5560D3216E8D3500FB50F6 /* Galaxy.mov in Resources */ = {isa = PBXBuildFile; fileRef = 3A5560D2216E8D3500FB50F6 /* Galaxy.mov */; };
+		3A5560D8216F936C00FB50F6 /* doughnut.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 3A5560D5216F92D400FB50F6 /* doughnut.m4a */; };
+		3A5560D9216F936C00FB50F6 /* moonlight.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 3A5560D4216F92D400FB50F6 /* moonlight.m4a */; };
+		3A5560DA216F936C00FB50F6 /* fun.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 3A5560D7216F92F800FB50F6 /* fun.m4a */; };
+		3A5560DB216F936C00FB50F6 /* turning.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 3A5560D6216F92F800FB50F6 /* turning.m4a */; };
 		3A57CE5F216302DE00D8B864 /* Create N Share.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A57CE5E216302DE00D8B864 /* Create N Share.storyboard */; };
 		3A57CE612163057300D8B864 /* MelodyGenerateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A57CE602163057300D8B864 /* MelodyGenerateViewController.swift */; };
 		3A57CE632163066D00D8B864 /* MelodyShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A57CE622163066D00D8B864 /* MelodyShareViewController.swift */; };
@@ -60,6 +64,10 @@
 		3A5560C9216E82FB00FB50F6 /* Lotus_Quartet_1.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Lotus_Quartet_1.m4a; sourceTree = "<group>"; };
 		3A5560CA216E82FB00FB50F6 /* Lotus_Single.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Lotus_Single.m4a; sourceTree = "<group>"; };
 		3A5560D2216E8D3500FB50F6 /* Galaxy.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = Galaxy.mov; sourceTree = "<group>"; };
+		3A5560D4216F92D400FB50F6 /* moonlight.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = moonlight.m4a; sourceTree = "<group>"; };
+		3A5560D5216F92D400FB50F6 /* doughnut.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = doughnut.m4a; sourceTree = "<group>"; };
+		3A5560D6216F92F800FB50F6 /* turning.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = turning.m4a; sourceTree = "<group>"; };
+		3A5560D7216F92F800FB50F6 /* fun.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = fun.m4a; sourceTree = "<group>"; };
 		3A57CE5E216302DE00D8B864 /* Create N Share.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Create N Share.storyboard"; sourceTree = "<group>"; };
 		3A57CE602163057300D8B864 /* MelodyGenerateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelodyGenerateViewController.swift; sourceTree = "<group>"; };
 		3A57CE622163066D00D8B864 /* MelodyShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelodyShareViewController.swift; sourceTree = "<group>"; };
@@ -157,6 +165,10 @@
 				3A5560C6216E82FB00FB50F6 /* Lotus_Quartet_2.m4a */,
 				3A5560CA216E82FB00FB50F6 /* Lotus_Single.m4a */,
 				3A5560C8216E82FB00FB50F6 /* Lotus_Triple.m4a */,
+				3A5560D5216F92D400FB50F6 /* doughnut.m4a */,
+				3A5560D4216F92D400FB50F6 /* moonlight.m4a */,
+				3A5560D7216F92F800FB50F6 /* fun.m4a */,
+				3A5560D6216F92F800FB50F6 /* turning.m4a */,
 			);
 			path = AudioResources;
 			sourceTree = "<group>";
@@ -299,6 +311,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A5560D8216F936C00FB50F6 /* doughnut.m4a in Resources */,
+				3A5560D9216F936C00FB50F6 /* moonlight.m4a in Resources */,
+				3A5560DA216F936C00FB50F6 /* fun.m4a in Resources */,
+				3A5560DB216F936C00FB50F6 /* turning.m4a in Resources */,
 				3A5560CB216E835B00FB50F6 /* Lotus_Dual.m4a in Resources */,
 				3A5560CC216E835B00FB50F6 /* Lotus_Quartet_1.m4a in Resources */,
 				3A5560CD216E835B00FB50F6 /* Lotus_Quartet_2.m4a in Resources */,

@@ -16,6 +16,12 @@ class MelodyGenerateViewController: UIViewController {
     @IBOutlet weak var topGradientView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var playerView: UIView!
+    @IBOutlet weak var userPortraitImageView: UIImageView! {
+        didSet {
+            userPortraitImageView.layer.cornerRadius = userPortraitImageView.frame.width / 2
+            userPortraitImageView.layer.masksToBounds = true
+        }
+    }
     
     var conditionalElements: [ConditionalElement] = []
     
@@ -35,7 +41,6 @@ class MelodyGenerateViewController: UIViewController {
         setupGradientView()
         loadMelodyAudio()
         loadVideoPlayer()
-        updateMelodyWithCondition()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -66,7 +71,6 @@ class MelodyGenerateViewController: UIViewController {
     }
     
     private func loadMelodyAudio() {
-        print(melody.defaultSongName)
         audioPlayer = AVPlayer(url: Bundle.main.url(forResource: melody.defaultSongName, withExtension: "m4a")!)
         audioPlayer?.play()
     }
@@ -87,17 +91,18 @@ class MelodyGenerateViewController: UIViewController {
         case 0:
             melody.defaultVideoName = "Galaxy"
         case 1:
-            melody.defaultSongName = "Lotus_Single"
+            melody.defaultSongName = "Lotus_Quartet_1"
         case 2:
             melody.defaultSongName = "Lotus_Dual"
         case 3:
             melody.defaultSongName = "Lotus_Triple"
         case 4:
-            if conditionalElements.contains(.health) {
-                melody.defaultSongName = "Lotus_Quartet_2"
-            } else {
-                melody.defaultSongName = "Lotus_Quartet_1"
-            }
+            melody.defaultSongName = "Lotus_Quartet_2"
+        case 5:
+            let previousIndex = UserDefaults.standard.integer(forKey: "SequencePlayIndex")
+            let thisIndex = (previousIndex + 1) % DemoEngine.defaultEngine.melodyNames.count
+            melody.defaultSongName = DemoEngine.defaultEngine.melodyNames[thisIndex]
+            UserDefaults.standard.set(thisIndex, forKey: "SequencePlayIndex")
         default:
             return
         }

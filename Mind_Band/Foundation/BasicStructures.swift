@@ -155,13 +155,15 @@ class PlanetNode: SCNNode {
             node.position = SCNVector3(0, 0, 0)
             self.addChildNode(node)
             
-            if !planetData.anxisTime.isZero {
-                node.runAction(getPlanetRotation(duration: planetData.anxisTime)) }
+//            if !planetData.anxisTime.isZero {
+//                node.runAction(getPlanetRotation(duration: planetData.anxisTime))
+//                
+//            }
         } else {
             
             self.geometry = geome
-            if !planetData.anxisTime.isZero {
-                self.runAction(getPlanetRotation(duration: planetData.anxisTime)) }
+//            if !planetData.anxisTime.isZero {
+//                self.runAction(getPlanetRotation(duration: planetData.anxisTime)) }
         }
         
         /// addLight as sun
