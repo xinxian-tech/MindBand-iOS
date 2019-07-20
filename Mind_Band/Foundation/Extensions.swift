@@ -13,6 +13,21 @@ func delay(for seconds: Double, block: @escaping ()->()) {
     DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + seconds, execute: block)
 }
 
+extension FileManager {
+    func clearTmpDirectory() {
+        do {
+            let tmpDirURL = FileManager.default.temporaryDirectory
+            let tmpDirectory = try contentsOfDirectory(atPath: tmpDirURL.path)
+            try tmpDirectory.forEach { file in
+                let fileUrl = tmpDirURL.appendingPathComponent(file)
+                try removeItem(atPath: fileUrl.path)
+            }
+        } catch {
+            //catch the error somehow
+        }
+    }
+}
+
 func durationForGifData(data: Data) -> Double {
     let gifSource = CGImageSourceCreateWithData(data as CFData, nil)!
     let numberOfImages = CGImageSourceGetCount(gifSource)

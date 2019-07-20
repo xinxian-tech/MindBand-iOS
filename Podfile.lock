@@ -1,20 +1,24 @@
 PODS:
+  - Alamofire (5.0.0-beta.6)
   - SVProgressHUD (2.2.5)
   - TapticEngine (1.2.0)
 
 DEPENDENCIES:
+  - Alamofire (~> 5.0.0-beta.5)
   - SVProgressHUD
   - TapticEngine
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
     - SVProgressHUD
     - TapticEngine
 
 SPEC CHECKSUMS:
+  Alamofire: cd08a4402bd12cacd0c66f23fb12fec8d6b965e4
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   TapticEngine: ed6f5b4a2e9aa46d4e8fa69a72a7a0b6719bf8ac
 
-PODFILE CHECKSUM: 851f709b6629b49ba6a2aeaba8beb5fa828e741a
+PODFILE CHECKSUM: ceca96c6c6eb0a10493c1468389d23e5ef86c0c9
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.6.2

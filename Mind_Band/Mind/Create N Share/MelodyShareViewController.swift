@@ -33,7 +33,6 @@ class MelodyShareViewController: UIViewController {
             (self.navigationController?.viewControllers[0] as! MelodyGenerateViewController).shouldSaveMelody = newValue
         }
     }
-
     
     private var videoPlayer: AVPlayer!
     private var audioPlayer: AVPlayer!

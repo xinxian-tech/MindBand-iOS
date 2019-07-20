@@ -13,6 +13,18 @@ class MBDataManager {
     
     static let defaultManager = MBDataManager()
     
+    func saveTemporaryData(data: Data, postfix: String, completion: ((URL) -> ())?) {
+        let url = getTemporaryURL(postfix: postfix)
+        try! data.write(to: url)
+        DispatchQueue.main.async {
+            completion?(url)
+        }
+    }
+    
+    func getTemporaryURL(postfix: String) -> URL {
+        return FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString).appendingPathExtension(postfix)
+    }
+    
     func getAndSaveRandomGeneratedMelody() -> GeneratedMelody {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
