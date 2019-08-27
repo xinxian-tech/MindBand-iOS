@@ -18,9 +18,6 @@ class TokenGenerator: NSObject {
     static var shared = TokenGenerator()
     
     func getHummingToken(url: URL, completion: ((MediaElementToken) -> ())?) {
-//        AF.upload(multipartFormData: { multipartFormdata in
-//            
-//        }, to: <#T##URLConvertible#>)
     }
     
     func getEmojiToken(emoji: String, completion: ((MediaElementToken) -> ())?) {

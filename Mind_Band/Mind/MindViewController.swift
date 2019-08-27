@@ -21,12 +21,6 @@ class MindViewController: UIViewController {
         .jupiter : nil
     ]
     
-    private var mediaPlanetMapping: [MediaElementIdentifier : PlanetEnum] = [
-        .emoji : .jupiter,
-        .image : .saturn,
-        .humming : .neptune
-    ]
-    
     private var inactiveTextMaterial: SCNMaterial = {
         let material = SCNMaterial()
         material.diffuse.contents = UIColor.lightGray

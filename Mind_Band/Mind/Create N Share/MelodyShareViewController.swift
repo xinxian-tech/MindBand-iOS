@@ -98,7 +98,7 @@ class MelodyShareViewController: UIViewController {
     }
     
     private func setupVideoPlayer() {
-        videoPlayer = AVPlayer(url: Bundle.main.url(forResource: melody.defaultVideoName, withExtension: "mov")!)
+        videoPlayer = AVPlayer(url: Bundle.main.url(forResource: melody.defaultVideoName, withExtension: "mp4")!)
         let playerLayer = AVPlayerLayer(player: videoPlayer)
         playerLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
         playerLayer.frame = CGRect(x: 20, y: 0, width: 300, height: 400)

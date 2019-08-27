@@ -10,6 +10,7 @@
 		273F703822D9CEE2008E7ADD /* GeneratedMelody+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273F703622D9CEE2008E7ADD /* GeneratedMelody+CoreDataClass.swift */; };
 		273F703922D9CEE2008E7ADD /* GeneratedMelody+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273F703722D9CEE2008E7ADD /* GeneratedMelody+CoreDataProperties.swift */; };
 		2752085822E0FF7A003E73BA /* EmojiElementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2752085722E0FF7A003E73BA /* EmojiElementViewController.swift */; };
+		278ED9F822E8DC9D00AE1F04 /* Spring_1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 2747271022E8DB80007F6A5B /* Spring_1.mp4 */; };
 		2798749C22DF5B0900970680 /* MediaElementAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2798749B22DF5B0900970680 /* MediaElementAddViewController.swift */; };
 		2798749E22DF608E00970680 /* ImageElementAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2798749D22DF608E00970680 /* ImageElementAddViewController.swift */; };
 		279874A022E0970900970680 /* HummingElementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2798749F22E0970900970680 /* HummingElementViewController.swift */; };
@@ -40,7 +41,7 @@
 		3A57CE702163987200D8B864 /* MBDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3A57CE6E2163987200D8B864 /* MBDataModel.xcdatamodeld */; };
 		3A57CE722163991F00D8B864 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A57CE712163991F00D8B864 /* Default-568h@2x.png */; };
 		3A6DD7972168F4FB007AD599 /* PlaceholderGeneration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6DD7962168F4FB007AD599 /* PlaceholderGeneration.swift */; };
-		3A7F1678216B6DDE0074055C /* Spring_1.mov in Resources */ = {isa = PBXBuildFile; fileRef = 3A7F1677216B6DDE0074055C /* Spring_1.mov */; };
+		3A7F1678216B6DDE0074055C /* 336.mov in Resources */ = {isa = PBXBuildFile; fileRef = 3A7F1677216B6DDE0074055C /* 336.mov */; };
 		3ABFD62F2169D43C006797F2 /* MelodyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABFD62E2169D43C006797F2 /* MelodyDetailViewController.swift */; };
 		3AED3B7E216916550074BA44 /* MBDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AED3B7D216916550074BA44 /* MBDataManager.swift */; };
 		3AFE6A01216264F200859AD3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFE6A00216264F200859AD3 /* AppDelegate.swift */; };
@@ -53,6 +54,7 @@
 /* Begin PBXFileReference section */
 		273F703622D9CEE2008E7ADD /* GeneratedMelody+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GeneratedMelody+CoreDataClass.swift"; sourceTree = "<group>"; };
 		273F703722D9CEE2008E7ADD /* GeneratedMelody+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GeneratedMelody+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		2747271022E8DB80007F6A5B /* Spring_1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Spring_1.mp4; sourceTree = "<group>"; };
 		2752085722E0FF7A003E73BA /* EmojiElementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiElementViewController.swift; sourceTree = "<group>"; };
 		2798749B22DF5B0900970680 /* MediaElementAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaElementAddViewController.swift; sourceTree = "<group>"; };
 		2798749D22DF608E00970680 /* ImageElementAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageElementAddViewController.swift; sourceTree = "<group>"; };
@@ -84,7 +86,7 @@
 		3A57CE6F2163987200D8B864 /* MBDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MBDataModel.xcdatamodel; sourceTree = "<group>"; };
 		3A57CE712163991F00D8B864 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		3A6DD7962168F4FB007AD599 /* PlaceholderGeneration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderGeneration.swift; sourceTree = "<group>"; };
-		3A7F1677216B6DDE0074055C /* Spring_1.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = Spring_1.mov; sourceTree = "<group>"; };
+		3A7F1677216B6DDE0074055C /* 336.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = 336.mov; sourceTree = "<group>"; };
 		3ABFD62E2169D43C006797F2 /* MelodyDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelodyDetailViewController.swift; sourceTree = "<group>"; };
 		3AED3B7D216916550074BA44 /* MBDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBDataManager.swift; sourceTree = "<group>"; };
 		3AFE69FD216264F100859AD3 /* Mind_Band.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mind_Band.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -171,7 +173,8 @@
 		3A1A08B82163A299005F4251 /* VideoResources */ = {
 			isa = PBXGroup;
 			children = (
-				3A7F1677216B6DDE0074055C /* Spring_1.mov */,
+				3A7F1677216B6DDE0074055C /* 336.mov */,
+				2747271022E8DB80007F6A5B /* Spring_1.mp4 */,
 				3A5560D2216E8D3500FB50F6 /* Galaxy.mov */,
 			);
 			path = VideoResources;
@@ -334,6 +337,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				278ED9F822E8DC9D00AE1F04 /* Spring_1.mp4 in Resources */,
 				3A5560D8216F936C00FB50F6 /* doughnut.m4a in Resources */,
 				3A5560D9216F936C00FB50F6 /* moonlight.m4a in Resources */,
 				3A5560DA216F936C00FB50F6 /* fun.m4a in Resources */,
@@ -349,7 +353,7 @@
 				3AFE6A08216264F300859AD3 /* Assets.xcassets in Resources */,
 				3A57CE722163991F00D8B864 /* Default-568h@2x.png in Resources */,
 				3A5560D3216E8D3500FB50F6 /* Galaxy.mov in Resources */,
-				3A7F1678216B6DDE0074055C /* Spring_1.mov in Resources */,
+				3A7F1678216B6DDE0074055C /* 336.mov in Resources */,
 				3AFE6A06216264F200859AD3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
