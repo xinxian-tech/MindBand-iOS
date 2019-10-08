@@ -6,12 +6,23 @@
 //  Copyright © 2019 李灿晨. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 enum MediaElementIdentifier {
     case humming
     case image
     case emoji
+    
+    func getCardImage() -> UIImage {
+        switch self {
+        case .image:
+            return UIImage(named: "ImageCard")!
+        case .emoji:
+            return UIImage(named: "EmojiCard")!
+        case .humming:
+            return UIImage(named: "VocalCard")!
+        }
+    }
 }
 
 protocol MediaElement {

@@ -8,7 +8,6 @@
 
 import UIKit
 import SceneKit
-import TapticEngine
 import SVProgressHUD
 
 class MindViewController: UIViewController {
@@ -29,7 +28,7 @@ class MindViewController: UIViewController {
     
     private var activeTextMaterial: SCNMaterial = {
         let material = SCNMaterial()
-        material.diffuse.contents = UIColor(red: 1, green: 72/255, blue: 133/255, alpha: 1)
+        material.diffuse.contents = UIColor(red: 255/255, green: 72/255, blue: 133/255, alpha: 1)
         return material
     }()
     
@@ -47,7 +46,7 @@ class MindViewController: UIViewController {
         case "showCreateNShare":
             let destination = (segue.destination as! UINavigationController)
                 .viewControllers.first! as! MelodyGenerateViewController
-            destination.conditionalElements = selectedConditions
+            destination.mediaElements = Array(mediaElements.values).filter({$0 != nil}) as! [MediaElement]
         default:
             break
         }

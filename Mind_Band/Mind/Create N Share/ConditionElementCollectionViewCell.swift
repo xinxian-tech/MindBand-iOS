@@ -12,9 +12,9 @@ class ConditionElementCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var elementImageView: UIImageView!
     
-    var conditionalElement: ConditionalElement? {
+    var mediaElement: MediaElement? {
         didSet {
-            elementImageView.image = conditionalElement?.getCardImage()
+            elementImageView.image = mediaElement?.identifier.getCardImage()
         }
     }
     

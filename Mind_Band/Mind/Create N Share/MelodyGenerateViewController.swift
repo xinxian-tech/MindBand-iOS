@@ -14,51 +14,40 @@ class MelodyGenerateViewController: UIViewController {
 
     @IBOutlet weak var conditionElementCollectionView: UICollectionView!
     @IBOutlet weak var topGradientView: UIView!
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var playerView: UIView!
-    @IBOutlet weak var userPortraitImageView: UIImageView! {
-        didSet {
-            userPortraitImageView.layer.cornerRadius = userPortraitImageView.frame.width / 2
-            userPortraitImageView.layer.masksToBounds = true
-        }
-    }
     
-    var conditionalElements: [ConditionalElement] = []
-    
-    var audioPlayer: AVPlayer?
-    var videoPlayer: AVPlayer?
-    
-    var melody: GeneratedMelody! = {
-        let melody = MBDataManager.defaultManager.getAndSaveRandomGeneratedMelody()
-        return melody
+    var mediaElements: [MediaElement] = []
+    var melodyPresentationView: MelodyPresentationView = {
+        let view = MelodyPresentationView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
     }()
-    var shouldSaveMelody: Bool = false
+    
+    let melodyGenerator = MelodyGenerator.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        titleLabel.text = melody.melodyTitle
-        updateMelodyWithCondition()
         setupGradientView()
-        loadMelodyAudio()
-        loadVideoPlayer()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        audioPlayer?.pause()
+        melodyGenerator.generateMelody(mediaElements: mediaElements) { audioURL in
+            self.melodyPresentationView.preparePresentation(
+                mediaElements: self.mediaElements,
+                audioURL: audioURL
+            )
+            self.melodyPresentationView.showPresentation()
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showMelodyShareViewController" {
             let destination = segue.destination as! MelodyShareViewController
-            destination.melody = melody
+            destination.mediaElements = mediaElements
         }
     }
     
     @IBAction func dismissButtonTapped(_ sender: UIButton) {
-        if !shouldSaveMelody {
-            MBDataManager.defaultManager.removeMelody(id: melody.id!)
-        }
         dismiss(animated: true, completion: nil)
     }
     
@@ -70,57 +59,13 @@ class MelodyGenerateViewController: UIViewController {
         topGradientView.layer.insertSublayer(gradientLayer, at: 0)
     }
     
-    private func loadMelodyAudio() {
-        audioPlayer = AVPlayer(url: Bundle.main.url(forResource: melody.defaultSongName, withExtension: "m4a")!)
-        audioPlayer?.play()
-    }
-    
-    private func loadVideoPlayer() {
-        videoPlayer = AVPlayer(url: Bundle.main.url(forResource: melody.defaultVideoName!, withExtension: "mp4")!)
-        let playerLayer = AVPlayerLayer(player: videoPlayer)
-        playerLayer.frame = self.view.bounds
-        playerView.layer.addSublayer(playerLayer)
-        videoPlayer?.play()
-        NotificationCenter.default.addObserver(self, selector: #selector(replayVideo),
-                                               name: NSNotification.Name.AVPlayerItemDidPlayToEndTime,
-                                               object: videoPlayer?.currentItem)
-    }
-    
-    private func updateMelodyWithCondition() {
-        switch conditionalElements.count {
-        case 0:
-            melody.defaultVideoName = "Galaxy"
-        case 1:
-            melody.defaultSongName = "Lotus_Quartet_1"
-        case 2:
-            melody.defaultSongName = "Lotus_Dual"
-        case 3:
-            melody.defaultSongName = "Lotus_Triple"
-        case 4:
-            melody.defaultSongName = "Lotus_Quartet_2"
-        case 5:
-            let previousIndex = UserDefaults.standard.integer(forKey: "SequencePlayIndex")
-            let thisIndex = (previousIndex + 1) % DemoEngine.defaultEngine.melodyNames.count
-            melody.defaultSongName = DemoEngine.defaultEngine.melodyNames[thisIndex]
-            UserDefaults.standard.set(thisIndex, forKey: "SequencePlayIndex")
-        default:
-            return
-        }
-        MBDataManager.defaultManager.updateMelody(melody: melody)
-    }
-    
-    @objc private func replayVideo() {
-        videoPlayer?.seek(to: CMTime.zero)
-        videoPlayer?.play()
-    }
-    
 }
 
 
 extension MelodyGenerateViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection
         section: Int) -> Int {
-        return conditionalElements.count
+        return mediaElements.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt
@@ -138,7 +83,7 @@ extension MelodyGenerateViewController: UICollectionViewDataSource, UICollection
     func collectionView(_ collectionView: UICollectionView, willDisplay
         cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         let cell = cell as! ConditionElementCollectionViewCell
-        cell.conditionalElement = conditionalElements[indexPath.row]
+        cell.mediaElement = mediaElements[indexPath.row]
     }
     
     func collectionView(_ collectionView: UICollectionView, layout

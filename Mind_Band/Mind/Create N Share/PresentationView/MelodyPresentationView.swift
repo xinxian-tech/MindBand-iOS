@@ -1,0 +1,56 @@
+//
+//  MelodyPresentationView.swift
+//  Mind_Band
+//
+//  Created by 李灿晨 on 10/6/19.
+//  Copyright © 2019 李灿晨. All rights reserved.
+//
+
+import UIKit
+import AVFoundation
+import SpriteKit
+
+protocol Presentation {
+    var view: UIView? {get}
+    func prepare(mediaElements: [MediaElement])
+    func present()
+}
+
+class MelodyPresentationView: UIView {
+    
+    var mediaElements: [MediaElement]?
+    var audioPlayer: AVAudioPlayer?
+    
+    var presentationView: Presentation?
+    
+    func preparePresentation(mediaElements: [MediaElement], audioURL: URL) {
+        audioPlayer = try! AVAudioPlayer(contentsOf: audioURL)
+        switch mediaElements.first!.identifier {
+        case .emoji:
+            presentationView = ImagePresentationView()
+        case .image:
+            presentationView = EmojiPresentationView()
+        case .humming:
+            break
+        }
+        presentationView?.prepare(mediaElements: mediaElements)
+        NSLayoutConstraint.activate([
+            presentationView!.view!.topAnchor.constraint(equalTo: self.topAnchor, constant: 0),
+            presentationView!.view!.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0),
+            presentationView!.view!.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0),
+            presentationView!.view!.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0)
+        ])
+    }
+    
+    func showPresentation() {
+        presentationView?.present()
+        audioPlayer?.play()
+    }
+    
+    func pause() {
+        audioPlayer?.pause()
+    }
+}
+
+
+

@@ -18,9 +18,7 @@ class MelodyDetailViewController: UIViewController {
     var melody: GeneratedMelody!
     var shouldSaveMelody: Bool {
         get {
-            return (self.navigationController?.viewControllers[0] as! MelodyGenerateViewController).shouldSaveMelody
-        } set {
-            (self.navigationController?.viewControllers[0] as! MelodyGenerateViewController).shouldSaveMelody = newValue
+            return false
         }
     }
     
