@@ -14,11 +14,7 @@ class MindViewController: UIViewController {
     
     @IBOutlet weak var scnView: SCNView!
     
-    private var mediaElements: [PlanetEnum : MediaElement?] = [
-        .neptune : nil,
-        .saturn : nil,
-        .jupiter : nil
-    ]
+    private var mediaElements: [PlanetEnum : MediaElement?]!
     
     private var inactiveTextMaterial: SCNMaterial = {
         let material = SCNMaterial()
@@ -39,6 +35,15 @@ class MindViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupSCNView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        mediaElements = [
+            .neptune : nil,
+            .saturn : nil,
+            .jupiter : nil
+        ]
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

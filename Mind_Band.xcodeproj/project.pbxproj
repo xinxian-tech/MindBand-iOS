@@ -7,12 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		273F703822D9CEE2008E7ADD /* GeneratedMelody+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273F703622D9CEE2008E7ADD /* GeneratedMelody+CoreDataClass.swift */; };
-		273F703922D9CEE2008E7ADD /* GeneratedMelody+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273F703722D9CEE2008E7ADD /* GeneratedMelody+CoreDataProperties.swift */; };
 		2752085822E0FF7A003E73BA /* EmojiElementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2752085722E0FF7A003E73BA /* EmojiElementViewController.swift */; };
 		2783A85F2344502A00E80BDB /* ConditionalMelody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2783A85E2344502A00E80BDB /* ConditionalMelody.swift */; };
 		2783A8612344514600E80BDB /* MelodyGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2783A8602344514600E80BDB /* MelodyGenerator.swift */; };
-		278ED9F822E8DC9D00AE1F04 /* Spring_1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 2747271022E8DB80007F6A5B /* Spring_1.mp4 */; };
 		2798749C22DF5B0900970680 /* MediaElementAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2798749B22DF5B0900970680 /* MediaElementAddViewController.swift */; };
 		2798749E22DF608E00970680 /* ImageElementAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2798749D22DF608E00970680 /* ImageElementAddViewController.swift */; };
 		279874A022E0970900970680 /* HummingElementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2798749F22E0970900970680 /* HummingElementViewController.swift */; };
@@ -22,32 +19,14 @@
 		27B51BC122DA1DA300B8B887 /* MediaElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B51BC022DA1DA300B8B887 /* MediaElement.swift */; };
 		27B51BC422DA880500B8B887 /* TokenGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B51BC322DA880500B8B887 /* TokenGenerator.swift */; };
 		3A157F782166F7C200CF4B0B /* CommunityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A157F772166F7C200CF4B0B /* CommunityViewController.swift */; };
-		3A157F7C2167052B00CF4B0B /* UserDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A157F7B2167052B00CF4B0B /* UserDetailTableViewCell.swift */; };
-		3A157F7F216705CC00CF4B0B /* MelodyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A157F7E216705CC00CF4B0B /* MelodyTableViewCell.swift */; };
-		3A157F85216708E800CF4B0B /* PersonalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A157F84216708E800CF4B0B /* PersonalViewController.swift */; };
-		3A1A08BC2163B08A005F4251 /* Lotus.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 3A1A08BB2163B06C005F4251 /* Lotus.m4a */; };
 		3A1A08BE2163B125005F4251 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1A08BD2163B125005F4251 /* Extensions.swift */; };
 		3A1A08C02164516E005F4251 /* MindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1A08BF2164516E005F4251 /* MindViewController.swift */; };
-		3A5560CB216E835B00FB50F6 /* Lotus_Dual.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 3A5560C7216E82FB00FB50F6 /* Lotus_Dual.m4a */; };
-		3A5560CC216E835B00FB50F6 /* Lotus_Quartet_1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 3A5560C9216E82FB00FB50F6 /* Lotus_Quartet_1.m4a */; };
-		3A5560CD216E835B00FB50F6 /* Lotus_Quartet_2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 3A5560C6216E82FB00FB50F6 /* Lotus_Quartet_2.m4a */; };
-		3A5560CE216E835B00FB50F6 /* Lotus_Single.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 3A5560CA216E82FB00FB50F6 /* Lotus_Single.m4a */; };
-		3A5560CF216E835B00FB50F6 /* Lotus_Triple.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 3A5560C8216E82FB00FB50F6 /* Lotus_Triple.m4a */; };
-		3A5560D3216E8D3500FB50F6 /* Galaxy.mov in Resources */ = {isa = PBXBuildFile; fileRef = 3A5560D2216E8D3500FB50F6 /* Galaxy.mov */; };
-		3A5560D8216F936C00FB50F6 /* doughnut.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 3A5560D5216F92D400FB50F6 /* doughnut.m4a */; };
-		3A5560D9216F936C00FB50F6 /* moonlight.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 3A5560D4216F92D400FB50F6 /* moonlight.m4a */; };
-		3A5560DA216F936C00FB50F6 /* fun.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 3A5560D7216F92F800FB50F6 /* fun.m4a */; };
-		3A5560DB216F936C00FB50F6 /* turning.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 3A5560D6216F92F800FB50F6 /* turning.m4a */; };
 		3A57CE5F216302DE00D8B864 /* Create N Share.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A57CE5E216302DE00D8B864 /* Create N Share.storyboard */; };
 		3A57CE612163057300D8B864 /* MelodyGenerateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A57CE602163057300D8B864 /* MelodyGenerateViewController.swift */; };
 		3A57CE632163066D00D8B864 /* MelodyShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A57CE622163066D00D8B864 /* MelodyShareViewController.swift */; };
 		3A57CE6521630E0100D8B864 /* ConditionElementCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A57CE6421630E0100D8B864 /* ConditionElementCollectionViewCell.swift */; };
 		3A57CE672163181F00D8B864 /* BasicStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A57CE662163181F00D8B864 /* BasicStructures.swift */; };
-		3A57CE702163987200D8B864 /* MBDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3A57CE6E2163987200D8B864 /* MBDataModel.xcdatamodeld */; };
 		3A57CE722163991F00D8B864 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A57CE712163991F00D8B864 /* Default-568h@2x.png */; };
-		3A6DD7972168F4FB007AD599 /* PlaceholderGeneration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6DD7962168F4FB007AD599 /* PlaceholderGeneration.swift */; };
-		3A7F1678216B6DDE0074055C /* 336.mov in Resources */ = {isa = PBXBuildFile; fileRef = 3A7F1677216B6DDE0074055C /* 336.mov */; };
-		3ABFD62F2169D43C006797F2 /* MelodyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABFD62E2169D43C006797F2 /* MelodyDetailViewController.swift */; };
 		3AED3B7E216916550074BA44 /* MBDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AED3B7D216916550074BA44 /* MBDataManager.swift */; };
 		3AFE6A01216264F200859AD3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFE6A00216264F200859AD3 /* AppDelegate.swift */; };
 		3AFE6A06216264F200859AD3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AFE6A04216264F200859AD3 /* Main.storyboard */; };
@@ -57,9 +36,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		273F703622D9CEE2008E7ADD /* GeneratedMelody+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GeneratedMelody+CoreDataClass.swift"; sourceTree = "<group>"; };
-		273F703722D9CEE2008E7ADD /* GeneratedMelody+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GeneratedMelody+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		2747271022E8DB80007F6A5B /* Spring_1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Spring_1.mp4; sourceTree = "<group>"; };
 		2752085722E0FF7A003E73BA /* EmojiElementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiElementViewController.swift; sourceTree = "<group>"; };
 		2783A85E2344502A00E80BDB /* ConditionalMelody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionalMelody.swift; sourceTree = "<group>"; };
 		2783A8602344514600E80BDB /* MelodyGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelodyGenerator.swift; sourceTree = "<group>"; };
@@ -72,32 +48,14 @@
 		27B51BC022DA1DA300B8B887 /* MediaElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaElement.swift; sourceTree = "<group>"; };
 		27B51BC322DA880500B8B887 /* TokenGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenGenerator.swift; sourceTree = "<group>"; };
 		3A157F772166F7C200CF4B0B /* CommunityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityViewController.swift; sourceTree = "<group>"; };
-		3A157F7B2167052B00CF4B0B /* UserDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailTableViewCell.swift; sourceTree = "<group>"; };
-		3A157F7E216705CC00CF4B0B /* MelodyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelodyTableViewCell.swift; sourceTree = "<group>"; };
-		3A157F84216708E800CF4B0B /* PersonalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalViewController.swift; sourceTree = "<group>"; };
-		3A1A08BB2163B06C005F4251 /* Lotus.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Lotus.m4a; sourceTree = "<group>"; };
 		3A1A08BD2163B125005F4251 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		3A1A08BF2164516E005F4251 /* MindViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MindViewController.swift; sourceTree = "<group>"; };
-		3A5560C6216E82FB00FB50F6 /* Lotus_Quartet_2.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Lotus_Quartet_2.m4a; sourceTree = "<group>"; };
-		3A5560C7216E82FB00FB50F6 /* Lotus_Dual.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Lotus_Dual.m4a; sourceTree = "<group>"; };
-		3A5560C8216E82FB00FB50F6 /* Lotus_Triple.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Lotus_Triple.m4a; sourceTree = "<group>"; };
-		3A5560C9216E82FB00FB50F6 /* Lotus_Quartet_1.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Lotus_Quartet_1.m4a; sourceTree = "<group>"; };
-		3A5560CA216E82FB00FB50F6 /* Lotus_Single.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Lotus_Single.m4a; sourceTree = "<group>"; };
-		3A5560D2216E8D3500FB50F6 /* Galaxy.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = Galaxy.mov; sourceTree = "<group>"; };
-		3A5560D4216F92D400FB50F6 /* moonlight.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = moonlight.m4a; sourceTree = "<group>"; };
-		3A5560D5216F92D400FB50F6 /* doughnut.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = doughnut.m4a; sourceTree = "<group>"; };
-		3A5560D6216F92F800FB50F6 /* turning.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = turning.m4a; sourceTree = "<group>"; };
-		3A5560D7216F92F800FB50F6 /* fun.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = fun.m4a; sourceTree = "<group>"; };
 		3A57CE5E216302DE00D8B864 /* Create N Share.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Create N Share.storyboard"; sourceTree = "<group>"; };
 		3A57CE602163057300D8B864 /* MelodyGenerateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelodyGenerateViewController.swift; sourceTree = "<group>"; };
 		3A57CE622163066D00D8B864 /* MelodyShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelodyShareViewController.swift; sourceTree = "<group>"; };
 		3A57CE6421630E0100D8B864 /* ConditionElementCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionElementCollectionViewCell.swift; sourceTree = "<group>"; };
 		3A57CE662163181F00D8B864 /* BasicStructures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicStructures.swift; sourceTree = "<group>"; };
-		3A57CE6F2163987200D8B864 /* MBDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MBDataModel.xcdatamodel; sourceTree = "<group>"; };
 		3A57CE712163991F00D8B864 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		3A6DD7962168F4FB007AD599 /* PlaceholderGeneration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderGeneration.swift; sourceTree = "<group>"; };
-		3A7F1677216B6DDE0074055C /* 336.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = 336.mov; sourceTree = "<group>"; };
-		3ABFD62E2169D43C006797F2 /* MelodyDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelodyDetailViewController.swift; sourceTree = "<group>"; };
 		3AED3B7D216916550074BA44 /* MBDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBDataManager.swift; sourceTree = "<group>"; };
 		3AFE69FD216264F100859AD3 /* Mind_Band.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mind_Band.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AFE6A00216264F200859AD3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -146,8 +104,6 @@
 		27B51BC222DA879D00B8B887 /* Backend */ = {
 			isa = PBXGroup;
 			children = (
-				27B51BC022DA1DA300B8B887 /* MediaElement.swift */,
-				2783A85E2344502A00E80BDB /* ConditionalMelody.swift */,
 				27B51BC322DA880500B8B887 /* TokenGenerator.swift */,
 				2783A8602344514600E80BDB /* MelodyGenerator.swift */,
 			);
@@ -181,44 +137,6 @@
 			path = Community;
 			sourceTree = "<group>";
 		};
-		3A157F7D2167055200CF4B0B /* Personal */ = {
-			isa = PBXGroup;
-			children = (
-				3A157F84216708E800CF4B0B /* PersonalViewController.swift */,
-				3A157F7B2167052B00CF4B0B /* UserDetailTableViewCell.swift */,
-				3A157F7E216705CC00CF4B0B /* MelodyTableViewCell.swift */,
-				3ABFD62E2169D43C006797F2 /* MelodyDetailViewController.swift */,
-			);
-			path = Personal;
-			sourceTree = "<group>";
-		};
-		3A1A08B82163A299005F4251 /* VideoResources */ = {
-			isa = PBXGroup;
-			children = (
-				3A7F1677216B6DDE0074055C /* 336.mov */,
-				2747271022E8DB80007F6A5B /* Spring_1.mp4 */,
-				3A5560D2216E8D3500FB50F6 /* Galaxy.mov */,
-			);
-			path = VideoResources;
-			sourceTree = "<group>";
-		};
-		3A1A08BA2163AEBC005F4251 /* AudioResources */ = {
-			isa = PBXGroup;
-			children = (
-				3A1A08BB2163B06C005F4251 /* Lotus.m4a */,
-				3A5560C7216E82FB00FB50F6 /* Lotus_Dual.m4a */,
-				3A5560C9216E82FB00FB50F6 /* Lotus_Quartet_1.m4a */,
-				3A5560C6216E82FB00FB50F6 /* Lotus_Quartet_2.m4a */,
-				3A5560CA216E82FB00FB50F6 /* Lotus_Single.m4a */,
-				3A5560C8216E82FB00FB50F6 /* Lotus_Triple.m4a */,
-				3A5560D5216F92D400FB50F6 /* doughnut.m4a */,
-				3A5560D4216F92D400FB50F6 /* moonlight.m4a */,
-				3A5560D7216F92F800FB50F6 /* fun.m4a */,
-				3A5560D6216F92F800FB50F6 /* turning.m4a */,
-			);
-			path = AudioResources;
-			sourceTree = "<group>";
-		};
 		3A57CE6821638F4400D8B864 /* Create N Share */ = {
 			isa = PBXGroup;
 			children = (
@@ -235,24 +153,13 @@
 			isa = PBXGroup;
 			children = (
 				3A57CE662163181F00D8B864 /* BasicStructures.swift */,
-				3A6DD7962168F4FB007AD599 /* PlaceholderGeneration.swift */,
 				3AED3B7D216916550074BA44 /* MBDataManager.swift */,
 				3A1A08BD2163B125005F4251 /* Extensions.swift */,
-				273F703622D9CEE2008E7ADD /* GeneratedMelody+CoreDataClass.swift */,
-				273F703722D9CEE2008E7ADD /* GeneratedMelody+CoreDataProperties.swift */,
-				3A57CE6E2163987200D8B864 /* MBDataModel.xcdatamodeld */,
+				27B51BC022DA1DA300B8B887 /* MediaElement.swift */,
+				2783A85E2344502A00E80BDB /* ConditionalMelody.swift */,
+				27B51BC222DA879D00B8B887 /* Backend */,
 			);
 			path = Foundation;
-			sourceTree = "<group>";
-		};
-		3A57CE7721639C0F00D8B864 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				3A1A08BA2163AEBC005F4251 /* AudioResources */,
-				3A1A08B82163A299005F4251 /* VideoResources */,
-				3AFE6A07216264F300859AD3 /* Assets.xcassets */,
-			);
-			path = Resources;
 			sourceTree = "<group>";
 		};
 		3AFE69F4216264F100859AD3 = {
@@ -283,10 +190,8 @@
 				3AFE6A04216264F200859AD3 /* Main.storyboard */,
 				3A157F792166F7D500CF4B0B /* Mind */,
 				3A157F7A2166F7F600CF4B0B /* Community */,
-				3A157F7D2167055200CF4B0B /* Personal */,
 				3A57CE6D216397DE00D8B864 /* Foundation */,
-				27B51BC222DA879D00B8B887 /* Backend */,
-				3A57CE7721639C0F00D8B864 /* Resources */,
+				3AFE6A07216264F300859AD3 /* Assets.xcassets */,
 			);
 			path = Mind_Band;
 			sourceTree = "<group>";
@@ -360,23 +265,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				278ED9F822E8DC9D00AE1F04 /* Spring_1.mp4 in Resources */,
-				3A5560D8216F936C00FB50F6 /* doughnut.m4a in Resources */,
-				3A5560D9216F936C00FB50F6 /* moonlight.m4a in Resources */,
-				3A5560DA216F936C00FB50F6 /* fun.m4a in Resources */,
-				3A5560DB216F936C00FB50F6 /* turning.m4a in Resources */,
-				3A5560CB216E835B00FB50F6 /* Lotus_Dual.m4a in Resources */,
-				3A5560CC216E835B00FB50F6 /* Lotus_Quartet_1.m4a in Resources */,
-				3A5560CD216E835B00FB50F6 /* Lotus_Quartet_2.m4a in Resources */,
-				3A5560CE216E835B00FB50F6 /* Lotus_Single.m4a in Resources */,
-				3A5560CF216E835B00FB50F6 /* Lotus_Triple.m4a in Resources */,
-				3A1A08BC2163B08A005F4251 /* Lotus.m4a in Resources */,
 				3AFE6A0B216264F300859AD3 /* LaunchScreen.storyboard in Resources */,
 				3A57CE5F216302DE00D8B864 /* Create N Share.storyboard in Resources */,
 				3AFE6A08216264F300859AD3 /* Assets.xcassets in Resources */,
 				3A57CE722163991F00D8B864 /* Default-568h@2x.png in Resources */,
-				3A5560D3216E8D3500FB50F6 /* Galaxy.mov in Resources */,
-				3A7F1678216B6DDE0074055C /* 336.mov in Resources */,
 				3AFE6A06216264F200859AD3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -433,24 +325,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A57CE702163987200D8B864 /* MBDataModel.xcdatamodeld in Sources */,
 				3AED3B7E216916550074BA44 /* MBDataManager.swift in Sources */,
-				3ABFD62F2169D43C006797F2 /* MelodyDetailViewController.swift in Sources */,
 				3A57CE612163057300D8B864 /* MelodyGenerateViewController.swift in Sources */,
-				3A157F7F216705CC00CF4B0B /* MelodyTableViewCell.swift in Sources */,
 				2798749C22DF5B0900970680 /* MediaElementAddViewController.swift in Sources */,
-				3A157F7C2167052B00CF4B0B /* UserDetailTableViewCell.swift in Sources */,
 				2798749E22DF608E00970680 /* ImageElementAddViewController.swift in Sources */,
 				2783A85F2344502A00E80BDB /* ConditionalMelody.swift in Sources */,
 				27A5F414234A701800678915 /* EmojiPresentationView.swift in Sources */,
-				3A6DD7972168F4FB007AD599 /* PlaceholderGeneration.swift in Sources */,
-				273F703922D9CEE2008E7ADD /* GeneratedMelody+CoreDataProperties.swift in Sources */,
 				3A57CE632163066D00D8B864 /* MelodyShareViewController.swift in Sources */,
 				27B51BC122DA1DA300B8B887 /* MediaElement.swift in Sources */,
 				3AFE6A01216264F200859AD3 /* AppDelegate.swift in Sources */,
 				279874A022E0970900970680 /* HummingElementViewController.swift in Sources */,
 				3A1A08C02164516E005F4251 /* MindViewController.swift in Sources */,
-				3A157F85216708E800CF4B0B /* PersonalViewController.swift in Sources */,
 				2752085822E0FF7A003E73BA /* EmojiElementViewController.swift in Sources */,
 				2783A8612344514600E80BDB /* MelodyGenerator.swift in Sources */,
 				3A57CE672163181F00D8B864 /* BasicStructures.swift in Sources */,
@@ -460,7 +345,6 @@
 				27B51BC422DA880500B8B887 /* TokenGenerator.swift in Sources */,
 				27994B08234A654E0089AA75 /* MelodyPresentationView.swift in Sources */,
 				27A5F412234A6DAF00678915 /* ImagePresentationView.swift in Sources */,
-				273F703822D9CEE2008E7ADD /* GeneratedMelody+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -664,19 +548,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		3A57CE6E2163987200D8B864 /* MBDataModel.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				3A57CE6F2163987200D8B864 /* MBDataModel.xcdatamodel */,
-			);
-			currentVersion = 3A57CE6F2163987200D8B864 /* MBDataModel.xcdatamodel */;
-			path = MBDataModel.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 3AFE69F5216264F100859AD3 /* Project object */;
 }

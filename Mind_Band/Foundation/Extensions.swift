@@ -9,10 +9,6 @@
 import UIKit
 import SceneKit
 
-func delay(for seconds: Double, block: @escaping ()->()) {
-    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + seconds, execute: block)
-}
-
 extension FileManager {
     func clearTmpDirectory() {
         do {

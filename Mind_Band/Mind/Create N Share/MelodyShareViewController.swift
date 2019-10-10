@@ -71,10 +71,7 @@ class MelodyShareViewController: UIViewController {
     
     @IBAction func publishButtonTapped(_ sender: UIButton) {
         SVProgressHUD.showSuccess(withStatus: "Published!")
-        delay(for: 2) {
-            self.doneButtonTapped(sender)
-            SVProgressHUD.dismiss()
-        }
+        doneButtonTapped(sender)
     }
     
     @IBAction func doneButtonTapped(_ sender: UIButton) {
