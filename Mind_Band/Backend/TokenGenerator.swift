@@ -33,6 +33,7 @@ class TokenGenerator: NSObject {
             parameters: ["emoji" : emoji],
             encoding: URLEncoding.default, headers: nil
         ).responseData() { dataResponse in
+            print(dataResponse.response)
             self.dataManager.saveTemporaryData(data: dataResponse.value!, postfix: "mp3") { url in
                 completion?(MediaElementToken(token: url))
             }

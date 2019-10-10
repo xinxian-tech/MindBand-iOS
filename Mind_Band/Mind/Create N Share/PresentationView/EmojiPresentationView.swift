@@ -11,14 +11,18 @@ import SpriteKit
 
 class EmojiPresentationView: SKView, Presentation {
     
-    var view: UIView?
+    var view: UIView {
+        get {
+            return self
+        }
+    }
     
     var emoji: String = "👻"
-    var size: CGFloat = 16
-    var timeUnit: TimeInterval = 0.1
+    var size: CGFloat = 32
+    var timeUnit: TimeInterval = 0.4
     var radian: CGFloat = .pi
     var scaleFactor: CGFloat = 3
-    var direction: CGVector = CGVector(dx: 50, dy: 50)
+    var direction: CGVector = CGVector(dx: 100, dy: 100)
     
     var horizontalDistance: CGFloat = 64
     var verticalDistance: CGFloat = 64
@@ -29,8 +33,8 @@ class EmojiPresentationView: SKView, Presentation {
     
     func prepare(mediaElements: [MediaElement]) {
         guard mediaElements.first! is EmojiElement else {return}
-        view = self
         translatesAutoresizingMaskIntoConstraints = false
+        backgroundColor = .red
         emoji = (mediaElements.first! as! EmojiElement).emoji!
         presentScene(getScene())
         placeEmojies()
@@ -42,8 +46,8 @@ class EmojiPresentationView: SKView, Presentation {
     
     private func getScene() -> SKScene {
         let scene = SKScene()
-        scene.backgroundColor = .white
-        scene.size = bounds.size
+        scene.backgroundColor = .black
+        scene.scaleMode = .resizeFill
         return scene
     }
     

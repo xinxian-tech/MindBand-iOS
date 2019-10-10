@@ -10,11 +10,14 @@ import UIKit
 
 class ImagePresentationView: UIImageView, Presentation {
     
-    var view: UIView?
+    var view: UIView {
+        get {
+            return self
+        }
+    }
     
     func prepare(mediaElements: [MediaElement]) {
         guard mediaElements.first! is ImageElement else {return}
-        view = self
         translatesAutoresizingMaskIntoConstraints = false
         self.image = UIImage(data: try! Data(contentsOf: (mediaElements.first! as! ImageElement).imageContentURL!))
         self.contentMode = .scaleAspectFit

@@ -7,8 +7,8 @@
 //
 
 import UIKit
-import WebKit
 import AVFoundation
+import SVProgressHUD
 
 class MelodyGenerateViewController: UIViewController {
 
@@ -27,17 +27,29 @@ class MelodyGenerateViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupGradientView()
+        view.insertSubview(melodyPresentationView, at: 0)
+        NSLayoutConstraint.activate([
+            melodyPresentationView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0),
+            melodyPresentationView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0),
+            melodyPresentationView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
+            melodyPresentationView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0)
+        ])
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        melodyGenerator.generateMelody(mediaElements: mediaElements) { audioURL in
-            self.melodyPresentationView.preparePresentation(
-                mediaElements: self.mediaElements,
-                audioURL: audioURL
-            )
-            self.melodyPresentationView.showPresentation()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        SVProgressHUD.show(withStatus: "Analyzing Media Types")
+        mediaElements.first!.fetchToken() {
+            self.melodyGenerator.generateMelody(mediaElements: self.mediaElements) { audioURL in
+                self.melodyPresentationView.preparePresentation(
+                    mediaElements: self.mediaElements,
+                    audioURL: audioURL
+                )
+                SVProgressHUD.dismiss()
+                self.melodyPresentationView.showPresentation()
+            }
         }
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

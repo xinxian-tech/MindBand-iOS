@@ -13,45 +13,52 @@ import SVProgressHUD
 
 class MelodyShareViewController: UIViewController {
 
-    @IBOutlet weak var shareButton: UIButton!
-    @IBOutlet weak var publishButton: UIButton!
-    @IBOutlet weak var playButton: UIButton!
-    
-    @IBOutlet weak var videoContainerView: UIView!
-    @IBOutlet weak var playButtonBlurView: UIVisualEffectView! {
+    @IBOutlet weak var shareButton: UIButton! {
         didSet {
-            playButtonBlurView.layer.cornerRadius = 15
-            playButtonBlurView.layer.masksToBounds = true
+            shareButton.layer.cornerRadius = 16
         }
     }
+    @IBOutlet weak var publishButton: UIButton! {
+        didSet {
+            publishButton.layer.cornerRadius = 16
+        }
+    }
+    @IBOutlet weak var presentationContrainerView: UIView!
+    
+    let melodyGenerator = MelodyGenerator.shared
+    
+    var melodyPresentationView: MelodyPresentationView = {
+        let view = MelodyPresentationView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
     
     var mediaElements: [MediaElement] = []
     
-    private var videoPlayer: AVPlayer!
-    private var audioPlayer: AVPlayer!
-    
-    private var didFinishedPlay: Bool = true
-    private var isPlaying: Bool = false {
-        didSet {
-            if isPlaying {
-                playButton.setTitle("Pause", for: .normal)
-            } else {
-                playButton.setTitle("Play", for: .normal)
-            }
-        }
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        shareButton.layer.cornerRadius = 16
-        publishButton.layer.cornerRadius = 16
+        presentationContrainerView.addSubview(melodyPresentationView)
+        NSLayoutConstraint.activate([
+            melodyPresentationView.topAnchor.constraint(equalTo: presentationContrainerView.topAnchor, constant: 0),
+            melodyPresentationView.bottomAnchor.constraint(equalTo: presentationContrainerView.bottomAnchor, constant: 0),
+            melodyPresentationView.leadingAnchor.constraint(equalTo: presentationContrainerView.leadingAnchor, constant: 0),
+            melodyPresentationView.trailingAnchor.constraint(equalTo: presentationContrainerView.trailingAnchor, constant: 0)
+        ])
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        melodyGenerator.generateMelody(mediaElements: mediaElements) { audioURL in
+            self.melodyPresentationView.preparePresentation(
+                mediaElements: self.mediaElements,
+                audioURL: audioURL
+            )
+            self.melodyPresentationView.showPresentation()
+        }
     }
     
     @IBAction func backButtonTapped(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
-    }
-    
-    @IBAction func playButtonTapped(_ sender: UIButton) {
     }
     
     @IBAction func saveButtonTapped(_ sender: UIButton) {

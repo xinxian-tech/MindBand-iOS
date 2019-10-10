@@ -53,12 +53,7 @@ class MindViewController: UIViewController {
     }
     
     @IBAction func addButtonTapped(_ sender: UIButton) {
-        SVProgressHUD.setDefaultStyle(.dark)
-        SVProgressHUD.show(withStatus: "Generating ...")
-        delay(for: 2) {
-            SVProgressHUD.dismiss()
-            self.performSegue(withIdentifier: "showCreateNShare", sender: nil)
-        }
+        self.performSegue(withIdentifier: "showCreateNShare", sender: nil)
     }
     
     private var selectedConditions: [ConditionalElement] = []

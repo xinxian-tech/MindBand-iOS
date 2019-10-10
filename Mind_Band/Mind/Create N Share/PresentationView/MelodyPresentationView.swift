@@ -11,7 +11,7 @@ import AVFoundation
 import SpriteKit
 
 protocol Presentation {
-    var view: UIView? {get}
+    var view: UIView {get}
     func prepare(mediaElements: [MediaElement])
     func present()
 }
@@ -27,18 +27,19 @@ class MelodyPresentationView: UIView {
         audioPlayer = try! AVAudioPlayer(contentsOf: audioURL)
         switch mediaElements.first!.identifier {
         case .emoji:
-            presentationView = ImagePresentationView()
-        case .image:
             presentationView = EmojiPresentationView()
+        case .image:
+            presentationView = ImagePresentationView()
         case .humming:
             break
         }
-        presentationView?.prepare(mediaElements: mediaElements)
+        presentationView!.prepare(mediaElements: mediaElements)
+        addSubview(presentationView!.view)
         NSLayoutConstraint.activate([
-            presentationView!.view!.topAnchor.constraint(equalTo: self.topAnchor, constant: 0),
-            presentationView!.view!.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0),
-            presentationView!.view!.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0),
-            presentationView!.view!.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0)
+            presentationView!.view.topAnchor.constraint(equalTo: self.topAnchor, constant: 0),
+            presentationView!.view.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0),
+            presentationView!.view.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0),
+            presentationView!.view.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0)
         ])
     }
     
