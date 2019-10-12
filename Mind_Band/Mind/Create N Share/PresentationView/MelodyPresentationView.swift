@@ -23,8 +23,9 @@ class MelodyPresentationView: UIView {
     
     var presentationView: Presentation?
     
-    func preparePresentation(mediaElements: [MediaElement]) {
-//        audioPlayer = try! AVAudioPlayer(contentsOf: audioURL)
+    func preparePresentation(mediaElements: [MediaElement], audioURL: URL) {
+        audioPlayer = try! AVAudioPlayer(contentsOf: audioURL)
+        audioPlayer?.numberOfLoops = -1
         switch mediaElements.first!.identifier {
         case .emoji:
             presentationView = EmojiPresentationView()

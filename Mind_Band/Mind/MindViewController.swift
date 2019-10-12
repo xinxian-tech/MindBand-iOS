@@ -35,6 +35,7 @@ class MindViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupSCNView()
+        SVProgressHUD.setDefaultStyle(.dark)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -54,7 +55,7 @@ class MindViewController: UIViewController {
     }
     
     @IBAction func addButtonTapped(_ sender: UIButton) {
-        guard mediaElements.filter({$0.1 != nil}).count != 0 else {
+        guard mediaElements.filter({$0.1 != nil && $0.0 != .neptune}).count != 0 else {
             SVProgressHUD.showError(withStatus: "Please Select a Media")
             return
         }

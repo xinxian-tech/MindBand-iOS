@@ -27,6 +27,7 @@ class ImagePresentationView: UIImageView, Presentation {
         if let url = (mediaElements.first! as! ImageElement).imageContentURL {
             if dataManager.isFileExist(url: url.deletingPathExtension().appendingPathExtension("mov")) {
                 videoPlayer = AVPlayer(url: url.deletingPathExtension().appendingPathExtension("mov"))
+                videoPlayer?.volume = 0.0
                 videoLayer = AVPlayerLayer(player: videoPlayer)
                 layer.addSublayer(videoLayer!)
                 NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime, object: videoPlayer?.currentItem, queue: .main) { notification in
@@ -41,7 +42,7 @@ class ImagePresentationView: UIImageView, Presentation {
     }
     
     func present() {
-        videoPlayer!.play()
+        videoPlayer?.play()
     }
     
     override func layoutSubviews() {

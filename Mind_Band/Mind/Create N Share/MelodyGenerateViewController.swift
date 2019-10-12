@@ -39,22 +39,17 @@ class MelodyGenerateViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         SVProgressHUD.show(withStatus: "Analyzing Media Types")
-        self.melodyPresentationView.preparePresentation(
-            mediaElements: self.mediaElements
-//            audioURL: audioURL
-        )
-        SVProgressHUD.dismiss()
         self.melodyPresentationView.showPresentation()
-//        mediaElements.first!.fetchToken() {
-//            self.melodyGenerator.generateMelody(mediaElements: self.mediaElements) { audioURL in
-//                self.melodyPresentationView.preparePresentation(
-//                    mediaElements: self.mediaElements,
-//                    audioURL: audioURL
-//                )
-//                SVProgressHUD.dismiss()
-//                self.melodyPresentationView.showPresentation()
-//            }
-//        }
+        mediaElements.first!.fetchToken() {
+            self.melodyGenerator.generateMelody(mediaElements: self.mediaElements) { audioURL in
+                self.melodyPresentationView.preparePresentation(
+                    mediaElements: self.mediaElements,
+                    audioURL: audioURL
+                )
+                SVProgressHUD.dismiss()
+                self.melodyPresentationView.showPresentation()
+            }
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
