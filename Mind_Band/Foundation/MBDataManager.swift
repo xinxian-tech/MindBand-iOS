@@ -25,4 +25,8 @@ class MBDataManager {
         return FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString).appendingPathExtension(postfix)
     }
     
+    func isFileExist(url: URL) -> Bool {
+        return FileManager.default.fileExists(atPath: url.path)
+    }
+    
 }

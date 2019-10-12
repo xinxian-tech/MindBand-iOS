@@ -23,8 +23,8 @@ class MelodyPresentationView: UIView {
     
     var presentationView: Presentation?
     
-    func preparePresentation(mediaElements: [MediaElement], audioURL: URL) {
-        audioPlayer = try! AVAudioPlayer(contentsOf: audioURL)
+    func preparePresentation(mediaElements: [MediaElement]) {
+//        audioPlayer = try! AVAudioPlayer(contentsOf: audioURL)
         switch mediaElements.first!.identifier {
         case .emoji:
             presentationView = EmojiPresentationView()
@@ -33,7 +33,6 @@ class MelodyPresentationView: UIView {
         case .humming:
             break
         }
-        presentationView!.prepare(mediaElements: mediaElements)
         addSubview(presentationView!.view)
         NSLayoutConstraint.activate([
             presentationView!.view.topAnchor.constraint(equalTo: self.topAnchor, constant: 0),
@@ -41,6 +40,7 @@ class MelodyPresentationView: UIView {
             presentationView!.view.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0),
             presentationView!.view.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0)
         ])
+        presentationView!.prepare(mediaElements: mediaElements)
     }
     
     func showPresentation() {

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Photos
+import CoreServices
 
 class ImageElementAddViewController: MediaElementAddViewController {
     
@@ -63,6 +65,7 @@ class ImageElementAddViewController: MediaElementAddViewController {
     @objc private func chooseImageButtonTapped() {
         let imagePickerControler = UIImagePickerController()
         imagePickerControler.delegate = self
+        imagePickerControler.mediaTypes = [kUTTypeLivePhoto as String, kUTTypeImage as String]
         present(imagePickerControler, animated: true, completion: nil)
     }
 }
@@ -78,6 +81,15 @@ extension ImageElementAddViewController: UIImagePickerControllerDelegate, UINavi
         self.imagePreviewView.image = selectedImage
         dataManager.saveTemporaryData(data: selectedImage!.jpegData(compressionQuality: 1)!, postfix: "jpeg") { url in
             self.mediaElement?.prepareContent(content: url)
+            if let livePhoto = info[UIImagePickerController.InfoKey.livePhoto] as? PHLivePhoto {
+                let assetResources = PHAssetResource.assetResources(for: livePhoto)
+                for resource in assetResources {
+                    if resource.type == .pairedVideo {
+                        PHAssetResourceManager.default().writeData(for: resource, toFile: url.deletingPathExtension().appendingPathExtension("mov"), options: nil) { error in
+                        }
+                    }
+                }
+            }
             self.confirmButton.isEnabled = true
             self.confirmButton.backgroundColor = #colorLiteral(red: 1, green: 0.2608970106, blue: 0.4899148345, alpha: 1)
             picker.dismiss(animated: true, completion: nil)

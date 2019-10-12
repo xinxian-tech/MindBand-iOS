@@ -25,13 +25,7 @@ class MelodyShareViewController: UIViewController {
     }
     @IBOutlet weak var presentationContrainerView: UIView!
     
-    let melodyGenerator = MelodyGenerator.shared
-    
-    var melodyPresentationView: MelodyPresentationView = {
-        let view = MelodyPresentationView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
+    var melodyPresentationView: MelodyPresentationView!
     
     var mediaElements: [MediaElement] = []
     
@@ -48,17 +42,11 @@ class MelodyShareViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        melodyGenerator.generateMelody(mediaElements: mediaElements) { audioURL in
-            self.melodyPresentationView.preparePresentation(
-                mediaElements: self.mediaElements,
-                audioURL: audioURL
-            )
-            self.melodyPresentationView.showPresentation()
-        }
     }
     
-    @IBAction func backButtonTapped(_ sender: UIButton) {
-        self.navigationController?.popViewController(animated: true)
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        melodyPresentationView.pause()
     }
     
     @IBAction func saveButtonTapped(_ sender: UIButton) {
