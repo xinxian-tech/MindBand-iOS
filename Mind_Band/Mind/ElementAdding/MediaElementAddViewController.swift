@@ -52,8 +52,7 @@ class MediaElementAddViewController: UIViewController {
         super.viewDidLoad()
         title = "Add an Image"
         confirmButton.isEnabled = false
-        
-//        navigationItem.leftBarButtonItem = cancelButton
+        view.backgroundColor = .black
         navigationController?.navigationBar.barTintColor = .black
         navigationController?.navigationBar.tintColor = .white
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
@@ -72,7 +71,7 @@ class MediaElementAddViewController: UIViewController {
             cancelButton.heightAnchor.constraint(equalTo: confirmButton.heightAnchor, multiplier: 1)
         ])
         NSLayoutConstraint.activate([
-            contentView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0),
+            contentView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0),
             contentView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             contentView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
             contentView.bottomAnchor.constraint(equalTo: confirmButton.topAnchor, constant: -16)
@@ -87,10 +86,6 @@ class MediaElementAddViewController: UIViewController {
     @objc func cancelButtonTapped(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
-    
-//    @objc func cancelButtonTapped(_ sender: UIBarButtonItem) {
-//        dismiss(animated: true, completion: nil)
-//    }
     
     func setConfirmButtonEnabled() {
         confirmButton.isEnabled = true

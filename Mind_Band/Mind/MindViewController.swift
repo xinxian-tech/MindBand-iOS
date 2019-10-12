@@ -39,11 +39,7 @@ class MindViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        mediaElements = [
-            .neptune : nil,
-            .saturn : nil,
-            .jupiter : nil
-        ]
+        deselectElements()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -58,6 +54,10 @@ class MindViewController: UIViewController {
     }
     
     @IBAction func addButtonTapped(_ sender: UIButton) {
+        guard mediaElements.filter({$0.1 != nil}).count != 0 else {
+            SVProgressHUD.showError(withStatus: "Please Select a Media")
+            return
+        }
         self.performSegue(withIdentifier: "showCreateNShare", sender: nil)
     }
     
@@ -159,21 +159,11 @@ class MindViewController: UIViewController {
             guard result != nil else {
                 // The result is saturn's loop
                 planetButtonTapped(planet: .saturn)
-//                switchPlanetSelectStatus(planet: .saturn, childNodeIndex: 2)
                 return
             }
             planetButtonTapped(planet: result!.planetType)
         }
     }
-    
-//    private func switchPlanetSelectStatus(planet: PlanetEnum, childNodeIndex: Int = 0) {
-//        TapticEngine.impact.feedback(.heavy)
-//        if selectedConditions.contains(planetConditionMap[planet]!) {
-//            setPlanetDeselected(planet: planet, childNodeIndex: childNodeIndex)
-//        } else {
-//            setPlanetSelected(planet: planet, childNodeIndex: childNodeIndex)
-//        }
-//    }
     
     private func setPlanetSelected(planet: PlanetEnum, childNodeIndex: Int = 0) {
         switch planet {
@@ -203,15 +193,23 @@ class MindViewController: UIViewController {
         selectedConditions = selectedConditions.filter({$0 != planetConditionMap[planet]!})
     }
     
+    private func deselectElements() {
+        mediaElements = [
+            .neptune : nil,
+            .saturn : nil,
+            .jupiter : nil
+        ]
+        for planet in mediaElements.keys {
+            setPlanetDeselected(planet: planet)
+        }
+    }
+    
 }
 
 
 extension MindViewController: MediaElementAddDelegate {
     func mediaElementSelected(element: MediaElement) {
-        setPlanetDeselected(planet: .neptune)
-        setPlanetDeselected(planet: .jupiter)
-        setPlanetDeselected(planet: .saturn, childNodeIndex: 2)
-        
+        deselectElements()
         switch element.identifier {
         case .humming:
             mediaElements[.neptune] = element
